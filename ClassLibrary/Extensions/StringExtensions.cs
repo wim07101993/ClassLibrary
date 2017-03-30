@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Microsoft.WindowsAPICodePack.Shell;
 
 namespace ClassLibrary.Extensions
 {
@@ -55,6 +56,20 @@ namespace ClassLibrary.Extensions
             return -1;
         }
 
+        public static char FindFirst(this string This, char[] characters, out int index)
+        {
+            for (var i = 0; i < This.Length; i++)
+                foreach (var c in characters)
+                    if (This[i] == c)
+                    {
+                        index = i;
+                        return c;
+                    }
+
+            index = -1;
+            return '0';
+        }
+
         public static int FindLastIndex(this string This, Predicate<char> match)
         {
             for (var i = This.Length - 1; i >= 0; i--)
@@ -62,6 +77,43 @@ namespace ClassLibrary.Extensions
                     return i;
 
             return -1;
+        }
+
+        public static string[] Split(this string This, string str)
+        {
+            var listOfStartIndexesOfMatches = new List<int> { 0 };
+            for (var i = 0; i < This.Length - str.Length; i++)
+                if (This.Substring(i, str.Length).Equals(str))
+                    listOfStartIndexesOfMatches.Add(i);
+
+            var ret =
+                listOfStartIndexesOfMatches.Select(
+                    (t, i) => This.Substring(t, listOfStartIndexesOfMatches[i + 1] + str.Length)).ToList();
+
+            ret.Add(This.Substring(listOfStartIndexesOfMatches.Count));
+
+            return ret.ToArray();
+        }
+
+        public static string[] SplitOnFirst(this string This, string str)
+        {
+            var ret = new List<string>();
+
+            for (var i = 0; i < This.Length - str.Length; i++)
+                if (This.Substring(i, str.Length).Equals(str))
+                {
+                    ret.Add(This.Substring(0, i));
+
+                    if (i != This.Length - 1)
+                        ret.Add(This.Substring(i + 1, This.Length - i - 1));
+
+                    break;
+                }
+
+            if (ret.Count == 0)
+                ret.Add(This);
+
+            return ret.ToArray();
         }
 
         public static string[] SplitOnFirst(this string This, char character)

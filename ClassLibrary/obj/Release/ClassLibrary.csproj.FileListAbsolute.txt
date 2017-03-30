@@ -1,0 +1,14 @@
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\ClassLibrary.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\ClassLibrary.pdb
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Microsoft.WindowsAPICodePack.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Microsoft.WindowsAPICodePack.Sensors.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Newtonsoft.Json.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\bin\Release\Newtonsoft.Json.xml
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.csprojResolveAssemblyReference.cache
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.Properties.Resources.resources
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.csproj.GenerateResource.Cache
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.dll
+E:\OneDrive\Visual Studio\Projects\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.pdb

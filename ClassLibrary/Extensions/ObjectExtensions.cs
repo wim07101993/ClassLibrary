@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,18 @@ namespace ClassLibrary.Extensions
         public static T Clone<T>(this T This)
         {
             return This.JsonSerialize().JsonDeserialize<T>();
+        }
+
+        public static bool IsNullable<T>(this T This)
+        {
+            if (This == null)
+                return true;
+
+            var type = typeof(T);
+            if (!type.IsValueType)
+                return true;
+
+            return Nullable.GetUnderlyingType(type) != null;
         }
     }
 }
