@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 
 namespace ClassLibrary.Extensions
 {
@@ -23,6 +24,11 @@ namespace ClassLibrary.Extensions
                     ret.Add(This[key], key);
 
             return ret;
+        }
+
+        public static TKey FindKey<TKey, TValue>(this IDictionary<TKey, TValue> This, TValue value)
+        {
+            return This.Find(x => Equals(x.Value, value)).Key;
         }
     }
 }

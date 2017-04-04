@@ -7,11 +7,16 @@ using System.Linq;
 
 namespace ClassLibrary.Collections
 {
-    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>, IDictionary<TKey, TValue>,
+    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>,
+        IDictionary<TKey, TValue>,
         IDictionary
     {
         #region IMPLEMENTED
+
+
+
         #region IDICTIONARY<>
+
         public TValue this[TKey key]
         {
             get
@@ -52,10 +57,12 @@ namespace ClassLibrary.Collections
 
             Add(new KeyValuePair<TKey, TValue>(key, value));
         }
+
         public bool ContainsKey(TKey key)
         {
             return Keys.Contains(key);
         }
+
         public bool Remove(TKey key)
         {
             try
@@ -73,6 +80,7 @@ namespace ClassLibrary.Collections
                 return false;
             }
         }
+
         public bool TryGetValue(TKey key, out TValue value)
         {
             try
@@ -86,9 +94,13 @@ namespace ClassLibrary.Collections
                 return false;
             }
         }
+
         #endregion IDICTIONARY<>
 
+
+
         #region IDICTIONARY
+
         object IDictionary.this[object key]
         {
             get { return this[(TKey)key]; }
@@ -96,11 +108,9 @@ namespace ClassLibrary.Collections
         }
 
         ICollection IDictionary.Keys => Keys.ToList();
-
         ICollection IDictionary.Values => Values.ToList();
 
         public bool IsReadOnly => false;
-
         public bool IsFixedSize => false;
 
         bool IDictionary.Contains(object key)
@@ -110,6 +120,7 @@ namespace ClassLibrary.Collections
 
             return Keys.Contains((TKey)key);
         }
+
         void IDictionary.Add(object key, object value)
         {
             if (!(key is TKey))
@@ -119,10 +130,12 @@ namespace ClassLibrary.Collections
 
             Add((TKey)key, (TValue)value);
         }
+
         IDictionaryEnumerator IDictionary.GetEnumerator()
         {
             throw new NotImplementedException();
         }
+
         void IDictionary.Remove(object key)
         {
             if (!(key is TKey))
@@ -130,7 +143,11 @@ namespace ClassLibrary.Collections
 
             Remove((TKey)key);
         }
+
         #endregion IDICTIONARY
+
+
+
         #endregion IMPLEMENTED
     }
 }
