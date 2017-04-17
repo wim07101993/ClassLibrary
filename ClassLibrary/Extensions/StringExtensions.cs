@@ -79,6 +79,11 @@ namespace ClassLibrary.Extensions
             return -1;
         }
 
+        public static bool ContainsIgnoreCase(this string This, string str)
+        {
+             return This.IndexOf(str, StringComparison.CurrentCultureIgnoreCase) >= 0;
+        }
+
         public static string[] Split(this string This, string str)
         {
             var listOfStartIndexesOfMatches = new List<int> { 0 };
