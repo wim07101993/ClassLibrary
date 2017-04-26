@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+
 
 namespace ClassLibrary
 {
@@ -31,6 +33,20 @@ namespace ClassLibrary
         public static void NextByte(byte[] buffer)
         {
             Random.NextBytes(buffer);
+        }
+
+        private static string NextString(int length)
+        {
+            var ret = "";
+            var i = 0;
+
+            while (i < length)
+            {
+                ret += Encoding.Default.GetString(BitConverter.GetBytes(Next()));
+                i += 4;
+            }
+
+            return ret;
         }
     }
 }
