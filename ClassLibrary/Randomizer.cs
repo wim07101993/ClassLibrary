@@ -35,7 +35,7 @@ namespace ClassLibrary
             Random.NextBytes(buffer);
         }
 
-        private static string NextString(int length)
+        public static string NextString(int length)
         {
             var ret = "";
             var i = 0;
