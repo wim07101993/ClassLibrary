@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ClassLibrary.Extensions
+namespace PortableClassLibrary.Extensions
 {
     public static class TypeExtensions
     {

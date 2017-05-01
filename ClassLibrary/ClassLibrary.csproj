@@ -90,7 +90,6 @@
     <Compile Include="Extensions\BitmapExtensions.cs" />
     <Compile Include="Extensions\BitmapSourceExtensions.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\FileInfoExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
