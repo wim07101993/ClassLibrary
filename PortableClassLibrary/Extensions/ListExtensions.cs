@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.WindowsAPICodePack.Shell;
 
-namespace ClassLibrary.Extensions
+
+namespace PortableClassLibrary.Extensions
 {
     public static class ListExtensions
     {
