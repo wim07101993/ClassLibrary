@@ -81,7 +81,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\ObservableDictionary.cs" />
     <Compile Include="Converters\BooleanConverters.cs" />
     <Compile Include="Converters\MathConverter.cs" />
     <Compile Include="Converters\ObjectConverters.cs" />
