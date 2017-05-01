@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Controls;
 
+
 namespace ClassLibrary.Extensions
 {
     public static class EnumerableExtensions
@@ -74,6 +75,30 @@ namespace ClassLibrary.Extensions
         public static bool IsNullOrEmpty(IEnumerable enumerable)
         {
             return enumerable == null || enumerable.Count() <= 0;
+        }
+
+        public static void FindDifferences<T>(
+            IEnumerable<T> firstCollection,
+            IEnumerable<T> secondCollection,
+            out IEnumerable<T> itemsInFirstCollectionButNotInSecond,
+            out IEnumerable<T> itemsInSecondCollectionButNotInFirst,
+            bool usePropertyComparer = true)
+        {
+            itemsInFirstCollectionButNotInSecond = FindDifferences(firstCollection, secondCollection, usePropertyComparer);
+            itemsInSecondCollectionButNotInFirst = FindDifferences(secondCollection, firstCollection, usePropertyComparer);
+        }
+
+        public static IEnumerable<T> FindDifferences<T>(
+            IEnumerable<T> firstCollection,
+            IEnumerable<T> secondCollection,
+            bool usePropertyCompare = true)
+        {
+            if (usePropertyCompare)
+                return firstCollection.Where(
+                    item => secondCollection.Find(x => x.PropertyCompare(item)) == null);
+            
+            return firstCollection.Where(
+                    item => secondCollection.Find(x => Equals(x, item)) == null);
         }
     }
 }

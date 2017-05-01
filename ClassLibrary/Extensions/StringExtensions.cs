@@ -2,8 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using Microsoft.WindowsAPICodePack.Shell;
+
 
 namespace ClassLibrary.Extensions
 {
@@ -178,5 +177,6 @@ namespace ClassLibrary.Extensions
         {
             return JsonConvert.DeserializeObject(This);
         }
+        
     }
 }
