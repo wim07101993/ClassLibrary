@@ -3,14 +3,14 @@ using System.ComponentModel;
 using System.Reflection;
 
 
-namespace ClassLibrary.Extensions
+namespace PortableClassLibrary.Extensions
 {
     public static class MemberInfoExtensions
     {
         public static string GetDisplayName(this MemberInfo This)
             => Attribute.IsDefined(This,
                 typeof(DisplayNameAttribute))
-                ? ((DisplayNameAttribute) This.GetCustomAttribute(typeof(DisplayNameAttribute))).DisplayName
+                ? ((DisplayNameAttribute)This.GetCustomAttribute(typeof(DisplayNameAttribute))).DisplayName
                 : This.Name;
 
         public static bool HasAttribute(this MemberInfo This, Type attribute)
