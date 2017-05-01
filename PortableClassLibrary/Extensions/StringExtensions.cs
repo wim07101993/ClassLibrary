@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 
-namespace ClassLibrary.Extensions
+namespace PortableClassLibrary.Extensions
 {
     public static class StringExtensions
     {
@@ -80,7 +80,7 @@ namespace ClassLibrary.Extensions
 
         public static bool ContainsIgnoreCase(this string This, string str)
         {
-             return This.IndexOf(str, StringComparison.CurrentCultureIgnoreCase) >= 0;
+            return This.IndexOf(str, StringComparison.CurrentCultureIgnoreCase) >= 0;
         }
 
         public static string[] Split(this string This, string str)
@@ -177,6 +177,6 @@ namespace ClassLibrary.Extensions
         {
             return JsonConvert.DeserializeObject(This);
         }
-        
+
     }
 }
