@@ -47,5 +47,10 @@ namespace PortableClassLibrary.Extensions
 
             return Nullable.GetUnderlyingType(type) != null;
         }
+
+        public static T CastObject<T>(this object This)
+        {
+            return (T) This;
+        }
     }
 }

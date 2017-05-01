@@ -13,3 +13,4 @@ E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\WindowsClassLibrary.Pro
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\WindowsClassLibrary.csproj.GenerateResource.Cache
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\WindowsClassLibrary.dll
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\WindowsClassLibrary.pdb
+E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\WindowsClassLibrary.csprojResolveAssemblyReference.cache
