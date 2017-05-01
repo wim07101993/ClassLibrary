@@ -2,7 +2,8 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace ClassLibrary.Converters
+
+namespace WindowsClassLibrary.Converters
 {
     public class ObjectToBooleanConverter : IValueConverter
     {

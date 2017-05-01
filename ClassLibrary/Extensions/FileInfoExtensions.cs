@@ -1,10 +1,10 @@
-﻿using Microsoft.WindowsAPICodePack.Shell;
-using System;
+﻿using System;
 using System.IO;
 using System.Windows.Media.Imaging;
+using Microsoft.WindowsAPICodePack.Shell;
 
 
-namespace ClassLibrary.Extensions
+namespace WindowsClassLibrary.Extensions
 {
     public static class FileInfoExtensions
     {

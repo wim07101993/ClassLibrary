@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Threading;
 
-namespace ClassLibrary
+
+namespace WindowsClassLibrary
 {
     public static class Timer
     {

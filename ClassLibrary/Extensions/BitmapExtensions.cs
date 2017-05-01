@@ -3,7 +3,8 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Media.Imaging;
 
-namespace ClassLibrary.Extensions
+
+namespace WindowsClassLibrary.Extensions
 {
     public static class BitmapExtensions
     {
