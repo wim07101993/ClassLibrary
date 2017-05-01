@@ -8,8 +8,7 @@ namespace PortableClassLibrary.Extensions
     public static class MemberInfoExtensions
     {
         public static string GetDisplayName(this MemberInfo This)
-            => Attribute.IsDefined(This,
-                typeof(DisplayNameAttribute))
+            => Attribute.IsDefined(This, typeof(DisplayNameAttribute))
                 ? ((DisplayNameAttribute)This.GetCustomAttribute(typeof(DisplayNameAttribute))).DisplayName
                 : This.Name;
 
