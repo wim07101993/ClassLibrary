@@ -26,3 +26,5 @@ E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.Properties
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.csproj.GenerateResource.Cache
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.dll
 E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\obj\Release\ClassLibrary.pdb
+E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\bin\Release\PortableClassLibrary.dll
+E:\OneDrive\dev\c#\ClassLibrary\ClassLibrary\bin\Release\PortableClassLibrary.pdb
