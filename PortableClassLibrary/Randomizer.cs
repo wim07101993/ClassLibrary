@@ -2,7 +2,7 @@
 using System.Text;
 
 
-namespace ClassLibrary
+namespace PortableClassLibrary
 {
     public static class Randomizer
     {
