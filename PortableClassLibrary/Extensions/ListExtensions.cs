@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace PortableClassLibrary.Extensions
@@ -36,5 +37,21 @@ namespace PortableClassLibrary.Extensions
 
         public static void RemoveLast(this IList This) => This.RemoveAt(This.Count - 1);
         public static void RemoveFirst(this IList This) => This.RemoveAt(0);
+
+        public static void Shuffle(this IList This)
+        {
+            for (var i = This.Count - 1; i > 1; i--)
+            {
+                var r = Randomizer.Next(i + 1);
+                var value = This[r];
+                This[r] = This[i];
+                This[i] = value;
+            }
+        }
+
+        public static List<T> Copy<T>(this IList<T> This)
+        {
+            return This.ToList();
+        }
     }
 }
