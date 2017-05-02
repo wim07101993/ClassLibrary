@@ -7,6 +7,12 @@ namespace PortableClassLibrary.Extensions
 {
     public static class FileInfoExtensions
     {
+        /// <summary>
+        /// Copies a file from its location to <see cref="destination"/>. The progress is available in the <see cref="Action{T}"/> <see cref="progressCallback"/>.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="destination"></param>
+        /// <param name="progressCallback"></param>
         public static void CopyTo(this FileInfo file, FileInfo destination, Action<int> progressCallback)
         {
             const int bufferSize = 1024 * 1024;  //1MB
@@ -36,6 +42,11 @@ namespace PortableClassLibrary.Extensions
             }
         }
 
+        /// <summary>
+        /// Gets a stirng that indicates the fileSize using B, KB, MB, GB or TB.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public static string GetFileSizeAsString(this FileInfo file)
         {
             double fileSize = file.Length;
