@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="IList"/> class.
+    /// </summary>
     public static class ListExtensions
     {
         /// <summary>

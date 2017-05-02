@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="IEnumerable"/> class.
+    /// </summary>
     public static class EnumerableExtensions
     {
         /// <summary>

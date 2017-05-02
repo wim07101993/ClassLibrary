@@ -6,8 +6,16 @@ using System.Windows.Media.Imaging;
 
 namespace WindowsClassLibrary.Extensions
 {
+    /// <summary>
+    /// A class with extensions for the <see cref="Bitmap"/> class.
+    /// </summary>
     public static class BitmapExtensions
     {
+        /// <summary>
+        /// Converts a <see cref="BitmapSource"/> to a <see cref="Bitmap"/>
+        /// </summary>
+        /// <param name="bitmapsource"></param>
+        /// <returns></returns>
         public static Bitmap ToBitmap(this BitmapSource bitmapsource)
         {
             using (var stream = new MemoryStream())
@@ -25,6 +33,11 @@ namespace WindowsClassLibrary.Extensions
             }
         }
 
+        /// <summary>
+        /// Converts a <see cref="Bitmap"/> to a <see cref="BitmapSource"/>
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <returns></returns>
         public static BitmapSource ToBitmapSource(this Bitmap bitmap)
         {
             using (var stream = new MemoryStream())

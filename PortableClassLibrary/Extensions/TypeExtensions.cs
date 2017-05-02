@@ -3,6 +3,9 @@
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="Type"/> class.
+    /// </summary>
     public static class TypeExtensions
     {
         /// <summary>

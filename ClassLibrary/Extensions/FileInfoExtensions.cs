@@ -6,8 +6,14 @@ using Microsoft.WindowsAPICodePack.Shell;
 
 namespace WindowsClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="FileInfo"/> class.
+    /// </summary>
     public static class FileInfoExtensions
     {
+        /// <summary>
+        /// Enum to indicate the size of the shown bitmap.
+        /// </summary>
         public enum BitmapSize
         {
             Small,
@@ -16,6 +22,14 @@ namespace WindowsClassLibrary.Extensions
             ExtraLarge
         }
 
+        /// <summary>
+        /// Gets the thumbnail of this file using the Microsoft.WindowsAPICodePack.Shell.
+        /// Returns false if an error occured. The out parameter <see cref="bitmapSource"/> is in that case null.
+        /// </summary>
+        /// <param name="This"></param>
+        /// <param name="bitmapSource"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
         public static bool TryGetThumbnail(this FileInfo This, out BitmapSource bitmapSource,
             BitmapSize size = BitmapSize.Large)
         {

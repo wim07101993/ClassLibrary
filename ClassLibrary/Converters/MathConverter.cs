@@ -25,14 +25,18 @@ namespace WindowsClassLibrary.Converters
         readonly Dictionary<string, IExpression> _storedExpressions = new Dictionary<string, IExpression>();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return Convert(new[] { value }, targetType, parameter, culture);
-        }
+            => Convert(new[] {value}, targetType, parameter, culture);
 
+        /// <summary>
+        /// Not implemented => throws <see cref="NotImplementedException"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+            => throw new NotImplementedException();
 
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -41,9 +45,9 @@ namespace WindowsClassLibrary.Converters
                 var result = Parse(parameter.ToString()).Eval(values);
                 if (targetType == typeof(decimal)) return result;
                 if (targetType == typeof(string)) return result.ToString(CultureInfo.InvariantCulture);
-                if (targetType == typeof(int)) return (int)result;
-                if (targetType == typeof(double)) return (double)result;
-                if (targetType == typeof(long)) return (long)result;
+                if (targetType == typeof(int)) return (int) result;
+                if (targetType == typeof(double)) return (double) result;
+                if (targetType == typeof(long)) return (long) result;
                 throw new ArgumentException($"Unsupported target type {targetType.FullName}");
             }
             catch (Exception ex)
@@ -54,26 +58,28 @@ namespace WindowsClassLibrary.Converters
             return DependencyProperty.UnsetValue;
         }
 
+        /// <summary>
+        /// Not implemented => throws <see cref="NotImplementedException"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetTypes"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+            => throw new NotImplementedException();
 
 #if !SILVERLIGHT
         public override object ProvideValue(IServiceProvider serviceProvider)
-        {
-            return this;
-        }
+            => this;
 #endif
         protected virtual void ProcessException(Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+            => Console.WriteLine(ex.Message);
 
         private IExpression Parse(string s)
         {
-            IExpression result;
-            if (_storedExpressions.TryGetValue(s, out result)) return result;
+            if (_storedExpressions.TryGetValue(s, out IExpression result))
+                return result;
 
             result = new Parser().Parse(s);
             _storedExpressions[s] = result;
@@ -93,15 +99,11 @@ namespace WindowsClassLibrary.Converters
             public Constant(string text)
             {
                 if (!decimal.TryParse(text, out _value))
-                {
                     throw new ArgumentException($"'{text}' is not a valid number");
-                }
             }
 
             public decimal Eval(object[] args)
-            {
-                return _value;
-            }
+                => _value;
         }
 
         private class Variable : IExpression
@@ -111,23 +113,17 @@ namespace WindowsClassLibrary.Converters
             public Variable(string text)
             {
                 if (!int.TryParse(text, out _index) || _index < 0)
-                {
                     throw new ArgumentException($"'{text}' is not a valid parameter index");
-                }
             }
 
             public Variable(int n)
-            {
-                _index = n;
-            }
+                => _index = n;
 
             public decimal Eval(object[] args)
             {
                 if (_index >= args.Length)
-                {
                     throw new ArgumentException(
                         $"MathConverter: parameter index {_index} is out of range. {args.Length} parameter(s) supplied");
-                }
 
                 return System.Convert.ToDecimal(args[_index]);
             }
@@ -145,18 +141,24 @@ namespace WindowsClassLibrary.Converters
                 _right = right;
                 switch (operation)
                 {
-                    case '+': _operation = (a, b) => (a + b); break;
-                    case '-': _operation = (a, b) => (a - b); break;
-                    case '*': _operation = (a, b) => (a * b); break;
-                    case '/': _operation = (a, b) => (a / b); break;
+                    case '+':
+                        _operation = (a, b) => a + b;
+                        break;
+                    case '-':
+                        _operation = (a, b) => a - b;
+                        break;
+                    case '*':
+                        _operation = (a, b) => a * b;
+                        break;
+                    case '/':
+                        _operation = (a, b) => a / b;
+                        break;
                     default: throw new ArgumentException("Invalid operation " + operation);
                 }
             }
 
             public decimal Eval(object[] args)
-            {
-                return _operation(_left.Eval(args), _right.Eval(args));
-            }
+                => _operation(_left.Eval(args), _right.Eval(args));
         }
 
         private class Negate : IExpression
@@ -164,14 +166,10 @@ namespace WindowsClassLibrary.Converters
             private readonly IExpression _param;
 
             public Negate(IExpression param)
-            {
-                _param = param;
-            }
+                => _param = param;
 
             public decimal Eval(object[] args)
-            {
-                return -_param.Eval(args);
-            }
+                => -_param.Eval(args);
         }
 
         private class Parser
@@ -191,8 +189,7 @@ namespace WindowsClassLibrary.Converters
                 }
                 catch (Exception ex)
                 {
-                    var msg =
-                        $"MathConverter: error parsing expression '{text}'. {ex.Message} at position {_pos}";
+                    var msg = $"MathConverter: error parsing expression '{text}'. {ex.Message} at position {_pos}";
 
                     throw new ArgumentException(msg, ex);
                 }
@@ -200,11 +197,12 @@ namespace WindowsClassLibrary.Converters
 
             private IExpression ParseExpression()
             {
-                IExpression left = ParseTerm();
+                var left = ParseTerm();
 
                 while (true)
                 {
-                    if (_pos >= _text.Length) return left;
+                    if (_pos >= _text.Length)
+                        return left;
 
                     var c = _text[_pos];
 
@@ -215,9 +213,7 @@ namespace WindowsClassLibrary.Converters
                         left = new BinaryOperation(c, left, right);
                     }
                     else
-                    {
                         return left;
-                    }
                 }
             }
 
@@ -227,7 +223,8 @@ namespace WindowsClassLibrary.Converters
 
                 while (true)
                 {
-                    if (_pos >= _text.Length) return left;
+                    if (_pos >= _text.Length)
+                        return left;
 
                     var c = _text[_pos];
 
@@ -238,16 +235,15 @@ namespace WindowsClassLibrary.Converters
                         left = new BinaryOperation(c, left, right);
                     }
                     else
-                    {
                         return left;
-                    }
                 }
             }
 
             private IExpression ParseFactor()
             {
                 SkipWhiteSpace();
-                if (_pos >= _text.Length) throw new ArgumentException("Unexpected end of text");
+                if (_pos >= _text.Length)
+                    throw new ArgumentException("Unexpected end of text");
 
                 var c = _text[_pos];
 
@@ -281,11 +277,18 @@ namespace WindowsClassLibrary.Converters
                     case '{':
                         ++_pos;
                         var end = _text.IndexOf('}', _pos);
-                        if (end < 0) { --_pos; throw new ArgumentException("Unmatched '{'"); }
-                        if (end == _pos) { throw new ArgumentException("Missing parameter index after '{'"); }
+                        if (end < 0)
+                        {
+                            --_pos;
+                            throw new ArgumentException("Unmatched '{'");
+                        }
+                        if (end == _pos)
+                            throw new ArgumentException("Missing parameter index after '{'");
+
                         var result = new Variable(_text.Substring(_pos, end - _pos).Trim());
                         _pos = end + 1;
                         SkipWhiteSpace();
+
                         return result;
                 }
 
@@ -305,20 +308,20 @@ namespace WindowsClassLibrary.Converters
             {
                 ++_pos;
                 SkipWhiteSpace();
+
                 return new Variable(n);
             }
 
             private void SkipWhiteSpace()
             {
-                while (_pos < _text.Length && char.IsWhiteSpace((_text[_pos]))) ++_pos;
+                while (_pos < _text.Length && char.IsWhiteSpace(_text[_pos]))
+                    ++_pos;
             }
 
             private void Require(char c)
             {
                 if (_pos >= _text.Length || _text[_pos] != c)
-                {
                     throw new ArgumentException("Expected '" + c + "'");
-                }
 
                 ++_pos;
             }
@@ -326,9 +329,7 @@ namespace WindowsClassLibrary.Converters
             private void RequireEndOfText()
             {
                 if (_pos != _text.Length)
-                {
                     throw new ArgumentException("Unexpected character '" + _text[_pos] + "'");
-                }
             }
         }
     }

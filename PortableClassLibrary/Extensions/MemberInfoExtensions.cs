@@ -5,6 +5,9 @@ using System.Reflection;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="MemberInfo"/> class.
+    /// </summary>
     public static class MemberInfoExtensions
     {
         /// <summary>

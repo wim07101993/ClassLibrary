@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="object"/> class.
+    /// </summary>
     public static class ObjectExtensions
     {
         /// <summary>

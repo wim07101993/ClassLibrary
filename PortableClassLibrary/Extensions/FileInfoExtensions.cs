@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="FileInfo"/> class.
+    /// </summary>
     public static class FileInfoExtensions
     {
         /// <summary>

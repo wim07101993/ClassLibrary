@@ -1,13 +1,20 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Media.Imaging;
 
 
 namespace WindowsClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="BitmapSource"/> class.
+    /// </summary>
     public static class BitmapSourceExtensions
     {
+        /// <summary>
+        /// Converts this <see cref="BitmapSource"/> to a <see cref="byte"/>[]
+        /// </summary>
+        /// <param name="image"></param>
+        /// <returns></returns>
         public static byte[] ToBytes(this BitmapSource image)
         {
             if (image == null) return null;
@@ -28,9 +35,15 @@ namespace WindowsClassLibrary.Extensions
             {
                 // ignored
             }
+
             return null;
         }
 
+        /// <summary>
+        /// Saves this <see cref="BitmapSource"/> to the path: <see cref="filePath"/>.
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="filePath"></param>
         public static void Save(this BitmapSource image, string filePath)
         {
             BitmapEncoder encoder = new PngBitmapEncoder();
@@ -42,11 +55,16 @@ namespace WindowsClassLibrary.Extensions
             }
         }
 
+        /// <summary>
+        /// Converts this <see cref="BitmapImage"/> to a <see cref="BitmapSource"/>
+        /// </summary>
+        /// <param name="This"></param>
+        /// <returns></returns>
         public static BitmapSource ToBitmapSource(this BitmapImage This)
         {
             using (var ms = new MemoryStream())
             {
-                Bitmap dImg = This.ToBitmap();
+                var dImg = This.ToBitmap();
 
                 dImg.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 var bImg = new BitmapImage();

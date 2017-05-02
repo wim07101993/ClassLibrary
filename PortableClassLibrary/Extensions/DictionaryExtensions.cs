@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace PortableClassLibrary.Extensions
 {
+    /// <summary>
+    /// A static class with extensions for the <see cref="Dictionary{TKey,TValue}"/> class.
+    /// </summary>
     public static class DictionaryExtensions
     {
         /// <summary>
