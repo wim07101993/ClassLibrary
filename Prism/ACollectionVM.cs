@@ -1,9 +1,9 @@
 ﻿using System.Collections.ObjectModel;
-using Prism.Interfaces;
+using ClassLibrary.Prism.Interfaces;
 using Prism.Mvvm;
 
 
-namespace Prism
+namespace ClassLibrary.Prism
 {
     public class ACollectionVM<T> : BindableBase, ICollectionVM<T>
     {

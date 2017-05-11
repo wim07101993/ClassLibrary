@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 
 
-namespace Prism.Interfaces
+namespace ClassLibrary.Prism.Interfaces
 {
     public interface ICollectionVM<T>
     {
