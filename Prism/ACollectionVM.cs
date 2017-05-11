@@ -17,13 +17,13 @@ namespace ClassLibrary.Prism
 
         #region PROPERTIES
 
-        public ObservableCollection<T> Items
+        public virtual ObservableCollection<T> Items
         {
             get => _items;
             set => SetProperty(ref _items, value);
         }
 
-        public T SelectedItem
+        public virtual T SelectedItem
         {
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
