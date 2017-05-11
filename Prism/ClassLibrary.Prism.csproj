@@ -7,8 +7,8 @@
     <ProjectGuid>{8765C2A6-5C28-4C65-B0AD-49CB21689C49}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Prism</RootNamespace>
-    <AssemblyName>Prism</AssemblyName>
+    <RootNamespace>ClassLibrary.Prism</RootNamespace>
+    <AssemblyName>ClassLibrary.Prism</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
