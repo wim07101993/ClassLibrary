@@ -1,0 +1,13 @@
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\ClassLibrary.Xamarin.dll
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\ClassLibrary.Xamarin.pdb
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.dll
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Platform.dll
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.dll
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.pdb
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.xml
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Platform.pdb
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.pdb
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.xml
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\obj\Release\Xamarin.csprojResolveAssemblyReference.cache
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.dll
+E:\OneDrive\dev\c#\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.pdb

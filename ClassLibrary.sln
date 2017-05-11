@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsClassLibrary", "ClassLibrary\WindowsClassLibrary.csproj", "{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamarin", "Xamarin\Xamarin.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortableClassLibrary", "PortableClassLibrary\PortableClassLibrary.csproj", "{558629F6-802C-4F08-AA64-1301A83679C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows", "Windows\Windows.csproj", "{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinClassLibrary", "XamarinClassLibrary\XamarinClassLibrary.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portable", "Portable\Portable.csproj", "{558629F6-802C-4F08-AA64-1301A83679C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prism", "Prism\Prism.csproj", "{8765C2A6-5C28-4C65-B0AD-49CB21689C49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,10 +29,10 @@ Global
 		{558629F6-802C-4F08-AA64-1301A83679C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{558629F6-802C-4F08-AA64-1301A83679C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{558629F6-802C-4F08-AA64-1301A83679C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
