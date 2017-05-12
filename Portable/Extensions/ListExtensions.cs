@@ -33,32 +33,12 @@ namespace ClassLibrary.Portable.Extensions
         /// </summary>
         /// <param name="This"></param>
         /// <param name="itemsToAdd"></param>
-        public static void AddRange<T>(this IList<T> This, IEnumerable<T> itemsToAdd)
-        {
-            foreach (var item in itemsToAdd)
-                This.Add(item);
-        }
-        /// <summary>
-        /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToAdd"/>, that item is added to this list.
-        /// </summary>
-        /// <param name="This"></param>
-        /// <param name="itemsToAdd"></param>
         public static void AddRange(this IList This, IEnumerable itemsToAdd)
         {
             foreach (var item in itemsToAdd)
                 This.Add(item);
         }
 
-        /// <summary>
-        /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToRemove"/>, that item is removed from this list.
-        /// </summary>
-        /// <param name="This"></param>
-        /// <param name="itemsToRemove"></param>
-        public static void RemoveRange<T>(this IList<T> This, IEnumerable<T> itemsToRemove)
-        {
-            foreach (var item in itemsToRemove)
-                This.Remove(item);
-        }
         /// <summary>
         /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToRemove"/>, that item is removed from this list.
         /// </summary>
@@ -75,28 +55,12 @@ namespace ClassLibrary.Portable.Extensions
         /// </summary>
         /// <param name="This"></param>
         /// <param name="indexesToRemoveAt"></param>
-        public static void RemoveRange<T>(this IList<T> This, IEnumerable<int> indexesToRemoveAt)
-        {
-            foreach (var i in indexesToRemoveAt)
-                This.RemoveAt(i);
-        }
-        /// <summary>
-        /// foreach index in the <see cref="IEnumerable"/> <see cref="indexesToRemoveAt"/>, the element at that index is removed from this list.
-        /// </summary>
-        /// <param name="This"></param>
-        /// <param name="indexesToRemoveAt"></param>
         public static void RemoveRange(this IList This, IEnumerable<int> indexesToRemoveAt)
         {
             foreach (var i in indexesToRemoveAt)
                 This.RemoveAt(i);
         }
 
-        /// <summary>
-        /// Removes the last element from the list.
-        /// </summary>
-        /// <param name="This"></param>
-        public static void RemoveLast<T>(this IList<T> This)
-            => This.RemoveAt(This.Count - 1);
         /// <summary>
         /// Removes the last element from the list.
         /// </summary>
@@ -108,29 +72,10 @@ namespace ClassLibrary.Portable.Extensions
         ///  Removes the first element from the list.
         /// </summary>
         /// <param name="This"></param>
-        public static void RemoveFirst<T>(this IList<T> This)
-            => This.RemoveAt(0);
-        /// <summary>
-        ///  Removes the first element from the list.
-        /// </summary>
-        /// <param name="This"></param>
         public static void RemoveFirst(this IList This) 
             => This.RemoveAt(0);
 
-        /// <summary>
-        /// Shuffles this List by switching each element with a random element from the list.
-        /// </summary>
-        /// <param name="This"></param>
-        public static void Shuffle<T>(this IList<T> This)
-        {
-            for (var i = This.Count - 1; i > 1; i--)
-            {
-                var r = Randomizer.Next(i + 1);
-                var value = This[r];
-                This[r] = This[i];
-                This[i] = value;
-            }
-        }
+       
         /// <summary>
         /// Shuffles this List by switching each element with a random element from the list.
         /// </summary>
