@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\Interfaces\IReadOnlyObservableCollection.cs" />
+    <Compile Include="Collections\ObservableCollection.cs" />
     <Compile Include="Collections\ObservableDictionary.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
