@@ -28,6 +28,7 @@ namespace ClassLibrary.Portable.Extensions
             return -1;
         }
 
+
         /// <summary>
         /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToAdd"/>, that item is added to this list.
         /// </summary>
@@ -38,6 +39,7 @@ namespace ClassLibrary.Portable.Extensions
             foreach (var item in itemsToAdd)
                 This.Add(item);
         }
+
 
         /// <summary>
         /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToRemove"/>, that item is removed from this list.
@@ -72,10 +74,10 @@ namespace ClassLibrary.Portable.Extensions
         ///  Removes the first element from the list.
         /// </summary>
         /// <param name="This"></param>
-        public static void RemoveFirst(this IList This) 
+        public static void RemoveFirst(this IList This)
             => This.RemoveAt(0);
 
-       
+
         /// <summary>
         /// Shuffles this List by switching each element with a random element from the list.
         /// </summary>
@@ -92,12 +94,55 @@ namespace ClassLibrary.Portable.Extensions
         }
 
         /// <summary>
+        /// Shifts all elements one place. (One is added to all indexes). The last element in the list becomes the first.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <param name="numberOfShifts"></param>
+        public static void ShiftAllElementsRight<T>(this IList<T> This, int numberOfShifts = 1)
+        {
+            if (EnumerableExtensions.IsNullOrEmpty(This) || This.Count == 1)
+                return;
+
+            for (var i = 0; i < numberOfShifts; i++)
+            {
+                var last = This[This.Count - 1];
+
+                for (var j = This.Count - 1; j >= 1; j--)
+                    This[j] = This[j - 1];
+
+                This[0] = last;
+            }
+        }
+        /// <summary>
+        /// Shifts all elements one place. (One is substracted of all indexes). The first element in the list becomes the last.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <param name="numberOfShifts"></param>
+        public static void ShiftAllElementsLeft<T>(this IList<T> This, int numberOfShifts = 1)
+        {
+            if (EnumerableExtensions.IsNullOrEmpty(This) || This.Count == 1)
+                return;
+
+            for (var i = 0; i < numberOfShifts; i++)
+            {
+                var first = This[0];
+
+                for (var j = 0; j < This.Count - 1; j--)
+                    This[j] = This[j - 1];
+
+                This[This.Count - 1] = first;
+            }
+        }
+
+        /// <summary>
         /// Returns a duplicate of this list. 
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="This"></param>
         /// <returns></returns>
-        public static List<T> Copy<T>(this IList<T> This) 
+        public static List<T> Copy<T>(this IList<T> This)
             => This.ToList();
     }
 }
