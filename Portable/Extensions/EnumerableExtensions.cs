@@ -94,7 +94,7 @@ namespace ClassLibrary.Portable.Extensions
         /// <returns></returns>
         public static IList<T> FindAll<T>(this IEnumerable<T> This, Predicate<T> match)
             => This.Where(t => match(t)).ToList();
-
+        
         /// <summary>
         /// Merges an <see cref="IEnumerable{T}"/> of <see cref="IEnumerable"/>. Adds all values to one <see cref="IList"/>.
         /// </summary>

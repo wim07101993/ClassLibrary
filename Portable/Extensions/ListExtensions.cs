@@ -12,6 +12,22 @@ namespace ClassLibrary.Portable.Extensions
     public static class ListExtensions
     {
         /// <summary>
+        /// Returns the first element of the list
+        /// </summary>
+        /// <param name="This"></param>
+        /// <returns></returns>
+        public static object First(this IList This)
+            => This[0];
+
+        /// <summary>
+        /// Returns the last element of the list
+        /// </summary>
+        /// <param name="This"></param>
+        /// <returns></returns>
+        public static object Last(this IList This)
+            => This[This.Count - 1];
+
+        /// <summary>
         /// Searches for the index of the element where the <see cref="Predicate{T}"/> match, gives true.
         /// If there were no matches, -1 is returned
         /// </summary>
@@ -24,6 +40,29 @@ namespace ClassLibrary.Portable.Extensions
             for (var i = 0; i < This.Count; i++)
                 if (match(This[i]))
                     return i;
+
+            return -1;
+        }
+
+        /// <summary>
+        /// Searches for the index of the nth element where the <see cref="Predicate{T}"/> match, gives true.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <param name="match"></param>
+        /// <param name="numberOfElementsToSkip"></param>
+        /// <returns></returns>
+        public static int FindNthIndex<T>(this IList<T> This, Predicate<T> match, int numberOfElementsToSkip)
+        {
+            var numberOfMatches = 0;
+            for (var i = 0; i < This.Count; i++)
+            {
+                if (match(This[i]))
+                    numberOfMatches++;
+
+                if (numberOfMatches == numberOfElementsToSkip)
+                    return i;
+            }
 
             return -1;
         }
@@ -92,6 +131,55 @@ namespace ClassLibrary.Portable.Extensions
                 This[i] = value;
             }
         }
+
+
+        /// <summary>
+        /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToAdd"/>, that item is added to this list.
+        /// </summary>
+        /// <param name="This"></param>
+        /// <param name="itemsToAdd"></param>
+        public static void AddRange<T>(this IList<T> This, IEnumerable<T> itemsToAdd)
+        {
+            foreach (var item in itemsToAdd)
+                This.Add(item);
+        }
+
+        /// <summary>
+        /// foreach item in the <see cref="IEnumerable"/> <see cref="itemsToRemove"/>, that item is removed from this list.
+        /// </summary>
+        /// <param name="This"></param>
+        /// <param name="itemsToRemove"></param>
+        public static void RemoveRange<T>(this IList<T> This, IEnumerable<T> itemsToRemove)
+        {
+            foreach (var item in itemsToRemove)
+                This.Remove(item);
+        }
+
+        /// <summary>
+        /// foreach index in the <see cref="IEnumerable"/> <see cref="indexesToRemoveAt"/>, the element at that index is removed from this list.
+        /// </summary>
+        /// <param name="This"></param>
+        /// <param name="indexesToRemoveAt"></param>
+        public static void RemoveRange<T>(this IList<T> This, IEnumerable<int> indexesToRemoveAt)
+        {
+            foreach (var i in indexesToRemoveAt)
+                This.RemoveAt(i);
+        }
+
+        /// <summary>
+        /// Removes the last element from the list.
+        /// </summary>
+        /// <param name="This"></param>
+        public static void RemoveLast<T>(this IList<T> This)
+            => This.RemoveAt(This.Count - 1);
+
+        /// <summary>
+        ///  Removes the first element from the list.
+        /// </summary>
+        /// <param name="This"></param>
+        public static void RemoveFirst<T>(this IList<T> This)
+            => This.RemoveAt(0);
+
 
         /// <summary>
         /// Shifts all elements one place. (One is added to all indexes). The last element in the list becomes the first.

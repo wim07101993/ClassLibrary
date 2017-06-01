@@ -20,6 +20,15 @@ namespace ClassLibrary.Portable.Extensions
         public static bool EqualsIgnoreCase(this string This, object value)
             => This.Equals(value.ToString(), StringComparison.CurrentCultureIgnoreCase);
 
+        /// <summary>
+        /// Extracts a string between a start- and endcharacter.
+        /// </summary>
+        /// <param name="This"></param>
+        /// <param name="startChar"></param>
+        /// <param name="endChar"></param>
+        /// <param name="escapeChar"></param>
+        /// <param name="includeStartAndEndChar"></param>
+        /// <returns></returns>
         public static string ExtractStringBetweenChars(
             this string This,
             char startChar = '"',
@@ -141,7 +150,7 @@ namespace ClassLibrary.Portable.Extensions
 
             return ret.ToArray();
         }
-
+        
         /// <summary>
         /// Splits this string in two where the string first matches <see cref="str"/>. In the return value the parts equal to str are removed.
         /// </summary>

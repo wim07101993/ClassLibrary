@@ -46,14 +46,15 @@
     <Compile Include="ACollectionVM.cs" />
     <Compile Include="Interfaces\ICollectionVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AObservableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portable\Portable.csproj">
+    <ProjectReference Include="..\Portable\ClassLibrary.Portable.csproj">
       <Project>{558629f6-802c-4f08-aa64-1301a83679c4}</Project>
-      <Name>Portable</Name>
+      <Name>ClassLibrary.Portable</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

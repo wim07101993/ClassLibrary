@@ -82,7 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Flyout.cs" />
+    <Compile Include="Controls\ListItemSwitcher.xaml.cs">
+      <DependentUpon>ListItemSwitcher.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BooleanConverters.cs" />
+    <Compile Include="Converters\DateTimeConverters.cs" />
     <Compile Include="Converters\ObjectConverters.cs" />
     <Compile Include="Converters\StringConverters.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
@@ -114,6 +118,13 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ListItemSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

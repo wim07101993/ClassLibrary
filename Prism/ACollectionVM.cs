@@ -1,11 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using ClassLibrary.Prism.Interfaces;
-using Prism.Mvvm;
 
 
 namespace ClassLibrary.Prism
 {
-    public class ACollectionVM<T> : BindableBase, ICollectionVM<T>
+    public class ACollectionVM<T> : AObservableBase, ICollectionVM<T>
     {
         #region FIELDS
 

@@ -1,0 +1,105 @@
+﻿<UserControl
+    x:Class="ClassLibrary.Windows.Controls.ListItemSwitcher"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Grid x:Key="IconArrowRight">
+                <Path
+                    Width="256"
+                    Height="256"
+                    Data="M0,0L8.5539884,0 17.246985,10.709991 17.32099,10.799011 17.359992,10.752991 21.637002,16.022003 17.359992,21.291992 8.6659879,32 0.11099243,32 9.9780006,19.847992 13.043004,16.069 12.970006,15.977997 9.8639869,12.153992z"
+                    Fill="#FF000000"
+                    RenderTransformOrigin="0.5,0.5"
+                    Stretch="Uniform" />
+            </Grid>
+
+            <Grid x:Key="IconArrowLeft">
+                <Path
+                    Width="256"
+                    Height="256"
+                    Data="M12.970992,0L21.524992,0 11.658996,12.152008 8.5930022,15.931 8.6660002,16.020996 11.772003,19.846008 21.636,32 13.082,32 4.3889922,21.290009 4.3150023,21.200989 4.2769927,21.247009 0,15.977997 4.2769927,10.708008z"
+                    Fill="#FF000000"
+                    RenderTransformOrigin="0.5,0.5"
+                    Stretch="Uniform" />
+            </Grid>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid
+            x:Name="Items"
+            Grid.Column="0"
+            ItemsSource="{Binding Containers}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID, Mode=OneWay}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Type, Mode=OneWay}" Header="Type" />
+                <DataGridTextColumn Binding="{Binding EndDate, Mode=OneWay, StringFormat='{}{0:dd/MM/yyyy}'}" Header="Einddatum" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border
+                                    x:Name="brdStlButton"
+                                    Padding="1"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="1">
+                                    <ContentPresenter x:Name="PART_ScrollContentPresenter" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="brdStlButton" Property="BorderBrush" Value="{DynamicResource AccentColorBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="brdStlButton" Property="Background" Value="{DynamicResource HighlightBrush}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Command="{Binding AddContainerCommand}" CommandParameter="{Binding ElementName=AllItems, Path=SelectedItems}">
+                <Button.OpacityMask>
+                    <VisualBrush Visual="{StaticResource IconArrowLeft}" />
+                </Button.OpacityMask>
+            </Button>
+            <Button Command="{Binding RemoveContainerCommand}" CommandParameter="{Binding ElementName=Items, Path=SelectedItems}">
+                <Button.OpacityMask>
+                    <VisualBrush Visual="{StaticResource IconArrowRight}" />
+                </Button.OpacityMask>
+            </Button>
+        </StackPanel>
+
+
+        <DataGrid
+            x:Name="AllItems"
+            Grid.Column="2"
+            ItemsSource="{Binding AllContainers}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ID, Mode=OneWay}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Type, Mode=OneWay}" Header="Type" />
+                <DataGridTextColumn Binding="{Binding EndDate, Mode=OneWay, StringFormat='{}{0:dd/MM/yyyy}'}" Header="Einddatum" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

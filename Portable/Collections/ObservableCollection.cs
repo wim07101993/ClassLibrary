@@ -5,7 +5,7 @@ using ClassLibrary.Portable.Collections.Interfaces;
 namespace ClassLibrary.Portable.Collections
 {
     public class ObservableCollection<T> : System.Collections.ObjectModel.ObservableCollection<T>,
-        IReadOnlyObservableCollection<T>
+        IReadOnlyObservableCollection<T>, IObservableCollection, IObservableCollection<T>
     {
         #region CONSTRUCTORS
 

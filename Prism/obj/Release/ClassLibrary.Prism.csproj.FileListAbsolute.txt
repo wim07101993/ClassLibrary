@@ -6,5 +6,6 @@ E:\OneDrive\dev\c#\ClassLibrary\Prism\bin\Release\Newtonsoft.Json.dll
 E:\OneDrive\dev\c#\ClassLibrary\Prism\bin\Release\ClassLibrary.Portable.pdb
 E:\OneDrive\dev\c#\ClassLibrary\Prism\bin\Release\Prism.xml
 E:\OneDrive\dev\c#\ClassLibrary\Prism\bin\Release\Newtonsoft.Json.xml
+E:\OneDrive\dev\c#\ClassLibrary\Prism\obj\Release\ClassLibrary.Prism.csprojResolveAssemblyReference.cache
 E:\OneDrive\dev\c#\ClassLibrary\Prism\obj\Release\ClassLibrary.Prism.dll
 E:\OneDrive\dev\c#\ClassLibrary\Prism\obj\Release\ClassLibrary.Prism.pdb
