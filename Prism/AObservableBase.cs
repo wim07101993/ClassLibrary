@@ -36,6 +36,13 @@ namespace ClassLibrary.Prism
         public IReadOnlyCollection<string> ChangedProperties
             => new ReadOnlyCollection<string>(_oldValueDictionary.Keys.ToList());
 
+        /// <summary>
+        /// Read-only-dictionary of all the properties and their old values.
+        /// </summary>
+        [JsonIgnore]
+        public IReadOnlyDictionary<string, IList> OldValues
+            => _oldValueDictionary;
+
         #endregion PROPERTIES
 
 
