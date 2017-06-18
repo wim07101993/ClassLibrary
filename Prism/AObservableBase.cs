@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using ClassLibrary.Portable.Extensions;
+using Newtonsoft.Json;
 using Prism.Mvvm;
 
 
@@ -31,6 +32,7 @@ namespace ClassLibrary.Prism
         /// <summary>
         /// Read-only-collection of all the properties that have been changed;
         /// </summary>
+        [JsonIgnore]
         public IReadOnlyCollection<string> ChangedProperties
             => new ReadOnlyCollection<string>(_oldValueDictionary.Keys.ToList());
 
