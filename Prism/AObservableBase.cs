@@ -112,7 +112,7 @@ namespace ClassLibrary.Prism
 
             // method to add collection to old value dictionary
             void StorageOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
-                => AddValueToOldValueDictionary(propertyName, value);
+                => AddValueToOldValueDictionary(propertyName, value.Clone());
         }
 
         /// <summary>
