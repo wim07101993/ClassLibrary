@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ClassLibrary.Portable.Collections.Interfaces;
 using ClassLibrary.Portable.Extensions;
 
 
@@ -12,9 +13,7 @@ namespace ClassLibrary.Portable.Collections
     /// </summary>
     /// <typeparam name="TKey">Type of the Keys</typeparam>
     /// <typeparam name="TValue">Type of the Values</typeparam>
-    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>,
-        IDictionary<TKey, TValue>,
-        IDictionary
+    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>, IObservableDictionary<TKey, TValue>
     {
         #region IDICTIONARY<>
 

@@ -56,8 +56,11 @@ namespace ClassLibrary.Portable.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="This"></param>
         /// <returns></returns>
-        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> This) 
-            => new ObservableCollection<T>(This);
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> This)
+        {
+            var collection = This as ObservableCollection<T>;
+            return collection ?? new ObservableCollection<T>(This);
+        }
 
         /// <summary>
         /// Creates a new <see cref="ClassLibrary.Portable.Collections.ObservableCollection{T}"/> and adds al the value of this list to it.
@@ -65,8 +68,11 @@ namespace ClassLibrary.Portable.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="This"></param>
         /// <returns></returns>
-        public static Collections.ObservableCollection<T> ToMyObservableCollection<T>(this IEnumerable<T> This) 
-            => new Collections.ObservableCollection<T>(This);
+        public static Collections.ObservableCollection<T> ToMyObservableCollection<T>(this IEnumerable<T> This)
+        {
+            var collection = This as Collections.ObservableCollection<T>;
+            return collection ?? new Collections.ObservableCollection<T>(This);
+        }
 
 
         /// <summary>

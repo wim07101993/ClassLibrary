@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\Interfaces\IObservableCollection.cs" />
+    <Compile Include="Collections\Interfaces\IObservableDictionary.cs" />
     <Compile Include="Collections\Interfaces\IReadOnlyObservableCollection.cs" />
     <Compile Include="Collections\ObservableCollection.cs" />
     <Compile Include="Collections\ObservableDictionary.cs" />
