@@ -85,7 +85,7 @@ namespace ClassLibrary.Portable.Collections
         /// </summary>
         /// <param name="key"></param>
         /// <param name="value"></param>
-        public void Add(TKey key, TValue value)
+        public virtual void Add(TKey key, TValue value)
         {
             if (key == null)
                 throw new ArgumentNullException(nameof(key));
@@ -105,7 +105,7 @@ namespace ClassLibrary.Portable.Collections
         /// True: <see cref="ObservableDictionary{TKey,TValue}"/> contains the key. 
         /// False: <see cref="ObservableDictionary{TKey,TValue}"/> doesn't contain the key
         /// </returns>
-        public bool ContainsKey(TKey key) => Keys.Contains(key);
+        public virtual bool ContainsKey(TKey key) => Keys.Contains(key);
 
         /// <summary>
         /// <para>
@@ -120,7 +120,7 @@ namespace ClassLibrary.Portable.Collections
         /// True: key was found
         /// False: key was not found
         /// </returns>
-        public bool Remove(TKey key)
+        public virtual bool Remove(TKey key)
         {
             try
             {
@@ -152,7 +152,7 @@ namespace ClassLibrary.Portable.Collections
         /// True: succesfull
         /// False: an error occured.
         /// </returns>
-        public bool TryGetValue(TKey key, out TValue value)
+        public virtual bool TryGetValue(TKey key, out TValue value)
         {
             try
             {
