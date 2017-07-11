@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\Flyout.cs" />
+    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\ListItemSwitcher.xaml.cs">
       <DependentUpon>ListItemSwitcher.xaml</DependentUpon>
     </Compile>
@@ -124,7 +125,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
