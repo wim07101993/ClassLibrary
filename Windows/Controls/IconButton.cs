@@ -6,8 +6,6 @@ namespace ClassLibrary.Windows.Controls
 {
     public class IconButton : Button
     {
-        #region FIELDS
-
         #region DEPENDENCY PROPERTIES
 
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
@@ -48,10 +46,17 @@ namespace ClassLibrary.Windows.Controls
             new PropertyMetadata(new SolidColorBrush(Colors.Transparent)));
 
 
+        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
+            "CornerRadius", typeof(CornerRadius), typeof(IconButton));
+
+        private new static readonly DependencyProperty BorderBrushProperty = DependencyProperty.Register(
+            "BorderBrush", typeof(Brush), typeof(IconButton));
+
+        public static readonly DependencyProperty IsBorderVisibleProperty = DependencyProperty.Register(
+            "IsBorderVisible", typeof(bool), typeof(IconButton));
+
         #endregion DEPENDENCY PROPERTIES
-
-        #endregion FIELDS
-
+        
 
         #region CONSTRUCTOR
 
@@ -124,11 +129,26 @@ namespace ClassLibrary.Windows.Controls
             set => SetValue(ClickBackgroundProperty, value);
         }
 
+
+        public CornerRadius CornerRadius
+        {
+            get => (CornerRadius) GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
+        }
+
+        // ReSharper disable once UnusedMember.Local
+        private new Brush BorderBrush
+        {
+            get => (Brush) GetValue(BorderBrushProperty);
+            set => SetValue(BorderBrushProperty, value);
+        }
+
+        public bool IsBorderVisible
+        {
+            get => (bool)GetValue(IsBorderVisibleProperty);
+            set => SetValue(IsBorderVisibleProperty, value);
+        }
+
         #endregion PROPERTIES
-
-
-        #region METHODS
-
-        #endregion
     }
 }

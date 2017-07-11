@@ -24,9 +24,11 @@
         <controls:IconButton
             Height="50"
             HorizontalAlignment="Center"
+            BorderThickness="1"
             ClickBackground="White"
             ClickForeground="LightGray"
             Content="hello world"
+            CornerRadius="5"
             HoverBackground="White"
             HoverForeground="Gray">
             <controls:IconButton.Icon>
