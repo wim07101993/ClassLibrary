@@ -180,6 +180,22 @@ namespace ClassLibrary.Portable.Extensions
         public static void RemoveFirst<T>(this IList<T> This)
             => This.RemoveAt(0);
 
+        /// <summary>
+        /// Removes all the elements for which the <see cref="Predicate{T}"/> match returns true.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <param name="match"></param>
+        public static void RemoveWhere<T>(this IList<T> This, Predicate<T> match)
+        {
+            for (var i = 0; i < This.Count; i++)
+                if (match(This[i]))
+                {
+                    This.RemoveAt(i);
+                    i--;
+                }
+        }
+
 
         /// <summary>
         /// Shifts all elements one place. (One is added to all indexes). The last element in the list becomes the first.

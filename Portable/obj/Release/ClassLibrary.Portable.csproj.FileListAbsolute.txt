@@ -12,3 +12,11 @@ E:\dev\Csharp\ClassLibrary\Portable\bin\Release\Newtonsoft.Json.xml
 E:\dev\Csharp\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.csprojResolveAssemblyReference.cache
 E:\dev\Csharp\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.dll
 E:\dev\Csharp\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.pdb
+D:\Dev\Projects\ClassLibrary\Portable\bin\Release\ClassLibrary.Portable.dll
+D:\Dev\Projects\ClassLibrary\Portable\bin\Release\ClassLibrary.Portable.pdb
+D:\Dev\Projects\ClassLibrary\Portable\bin\Release\Newtonsoft.Json.dll
+D:\Dev\Projects\ClassLibrary\Portable\bin\Release\Newtonsoft.Json.xml
+D:\Dev\Projects\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.csprojResolveAssemblyReference.cache
+D:\Dev\Projects\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.csproj.CoreCompileInputs.cache
+D:\Dev\Projects\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.dll
+D:\Dev\Projects\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.pdb

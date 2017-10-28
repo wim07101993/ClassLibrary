@@ -44,9 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\Collection.cs" />
     <Compile Include="Collections\Interfaces\IObservableCollection.cs" />
     <Compile Include="Collections\Interfaces\IObservableDictionary.cs" />
     <Compile Include="Collections\Interfaces\IReadOnlyObservableCollection.cs" />
+    <Compile Include="Collections\List.cs" />
     <Compile Include="Collections\ObservableCollection.cs" />
     <Compile Include="Collections\ObservableDictionary.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
@@ -57,7 +59,7 @@
     <Compile Include="Extensions\MemberInfoExtensions.cs" />
     <Compile Include="Extensions\ModelWithIDExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Interfaces\StringExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Interfaces\IModelWithID.cs" />
     <Compile Include="Randomizer.cs" />

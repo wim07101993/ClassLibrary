@@ -13,7 +13,8 @@ namespace ClassLibrary.Portable.Collections
     /// </summary>
     /// <typeparam name="TKey">Type of the Keys</typeparam>
     /// <typeparam name="TValue">Type of the Values</typeparam>
-    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>, IObservableDictionary<TKey, TValue>
+    public class ObservableDictionary<TKey, TValue> : ObservableCollection<KeyValuePair<TKey, TValue>>,
+        IObservableDictionary<TKey, TValue>
     {
         #region IDICTIONARY<>
 
@@ -61,6 +62,7 @@ namespace ClassLibrary.Portable.Collections
         /// Returns a <see cref="ICollection{TKey}"/> of all the keys in the <see cref="ObservableDictionary{TKey,TValue}"/>.
         /// </summary>
         public ICollection<TKey> Keys => this.Select(x => x.Key).ToList();
+
         /// <summary>
         /// <para>
         /// Implemented from <see cref="IDictionary{TKey,TValue}"/>.
@@ -187,8 +189,8 @@ namespace ClassLibrary.Portable.Collections
         /// <returns></returns>
         object IDictionary.this[object key]
         {
-            get => this[(TKey)key];
-            set => this[(TKey)key] = (TValue)value;
+            get => this[(TKey) key];
+            set => this[(TKey) key] = (TValue) value;
         }
 
         /// <summary>
@@ -199,6 +201,7 @@ namespace ClassLibrary.Portable.Collections
         /// Returns a <see cref="ICollection"/> of all the keys in the <see cref="ObservableDictionary{TKey,TValue}"/>.
         /// </summary>
         ICollection IDictionary.Keys => Keys.ToList();
+
         /// <summary>
         /// <para>
         /// Implemented from <see cref="IDictionary"/>.
@@ -216,6 +219,7 @@ namespace ClassLibrary.Portable.Collections
         /// The <see cref="ObservableDictionary{TKey,TValue}"/> is not read only: Returns false;
         /// </summary>
         public bool IsReadOnly => false;
+
         /// <summary>
         /// <para>
         /// Implemented from <see cref="IDictionary"/>.
@@ -246,9 +250,9 @@ namespace ClassLibrary.Portable.Collections
             if (!(value is TValue))
                 throw new ArgumentException("wrong type", nameof(value));
 
-            Add((TKey)key, (TValue)value);
+            Add((TKey) key, (TValue) value);
         }
-        
+
         /// <summary>
         /// <para>
         /// Implemented from <see cref="IDictionary"/>
@@ -266,7 +270,7 @@ namespace ClassLibrary.Portable.Collections
             if (!(key is TKey))
                 throw new ArgumentException("wrong type", nameof(key));
 
-            return Keys.Contains((TKey)key);
+            return Keys.Contains((TKey) key);
         }
 
         /// <summary>
@@ -288,11 +292,10 @@ namespace ClassLibrary.Portable.Collections
             if (!(key is TKey))
                 throw new ArgumentException("wrong type", nameof(key));
 
-            Remove((TKey)key);
+            Remove((TKey) key);
         }
 
         #endregion METHODS
-
 
         #endregion IDICTIONARY
     }

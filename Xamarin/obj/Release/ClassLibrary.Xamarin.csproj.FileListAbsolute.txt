@@ -24,3 +24,17 @@ E:\dev\Csharp\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.xml
 E:\dev\Csharp\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.csprojResolveAssemblyReference.cache
 E:\dev\Csharp\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.dll
 E:\dev\Csharp\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.pdb
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\ClassLibrary.Xamarin.dll
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\ClassLibrary.Xamarin.pdb
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.dll
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Platform.dll
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.dll
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.pdb
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Core.xml
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Platform.pdb
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.pdb
+D:\Dev\Projects\ClassLibrary\Xamarin\bin\Release\Xamarin.Forms.Xaml.xml
+D:\Dev\Projects\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.csprojResolveAssemblyReference.cache
+D:\Dev\Projects\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.csproj.CoreCompileInputs.cache
+D:\Dev\Projects\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.dll
+D:\Dev\Projects\ClassLibrary\Xamarin\obj\Release\ClassLibrary.Xamarin.pdb

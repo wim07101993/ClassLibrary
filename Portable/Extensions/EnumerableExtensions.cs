@@ -51,16 +51,22 @@ namespace ClassLibrary.Portable.Extensions
         }
 
         /// <summary>
+        /// Creates a new <see cref="ClassLibrary.Portable.Collections.List{T}"/> and adds al the value of this list to it.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <returns></returns>
+        public static Collections.List<T> ToCPList<T>(this IEnumerable<T> This)
+            => This as Collections.List<T> ?? new Collections.List<T>(This);
+
+        /// <summary>
         /// Creates a new <see cref="ObservableCollection{T}"/> and adds al the value of this list to it.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="This"></param>
         /// <returns></returns>
-        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> This)
-        {
-            var collection = This as ObservableCollection<T>;
-            return collection ?? new ObservableCollection<T>(This);
-        }
+        public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> This) 
+            => This as ObservableCollection<T> ?? new ObservableCollection<T>(This);
 
         /// <summary>
         /// Creates a new <see cref="ClassLibrary.Portable.Collections.ObservableCollection{T}"/> and adds al the value of this list to it.
@@ -68,12 +74,17 @@ namespace ClassLibrary.Portable.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="This"></param>
         /// <returns></returns>
-        public static Collections.ObservableCollection<T> ToMyObservableCollection<T>(this IEnumerable<T> This)
-        {
-            var collection = This as Collections.ObservableCollection<T>;
-            return collection ?? new Collections.ObservableCollection<T>(This);
-        }
+        public static Collections.ObservableCollection<T> ToCPObservableCollection<T>(this IEnumerable<T> This) 
+            => This as Collections.ObservableCollection<T> ?? new Collections.ObservableCollection<T>(This);
 
+        /// <summary>
+        /// Creates a new <see cref="ClassLibrary.Portable.Collections.Collection{T}"/> and adds al the value of this list to it.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="This"></param>
+        /// <returns></returns>
+        public static Collections.Collection<T> ToCPCollection<T>(this IEnumerable<T> This) 
+            => This as Collections.Collection<T> ?? new Collections.Collection<T>(This.ToList());
 
         /// <summary>
         /// Loops trough this enumerable to find a value that matches the <see cref="Predicate{T}"/> match.
