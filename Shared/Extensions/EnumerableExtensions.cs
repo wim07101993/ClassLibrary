@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace Shared.Extensions
@@ -12,6 +13,9 @@ namespace Shared.Extensions
 
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> collection)
             => new ObservableCollection<T>(collection);
+
+        public static IReadOnlyList<T> ToReadOnlyList<T>(this IEnumerable<T> collection)
+            => new ReadOnlyCollection<T>(collection.ToList());
 
         #endregion CONVERSION
 
