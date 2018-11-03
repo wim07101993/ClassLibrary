@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text;
 
 namespace Shared.Extensions
 {
@@ -27,7 +29,8 @@ namespace Shared.Extensions
                         started = true;
                         if (includeStart)
                             yield return enumerator.Current;
-                    }else if (started && endPredicate(enumerator.Current))
+                    }
+                    else if (started && endPredicate(enumerator.Current))
                     {
                         if (includeEnd)
                             yield return enumerator.Current;
