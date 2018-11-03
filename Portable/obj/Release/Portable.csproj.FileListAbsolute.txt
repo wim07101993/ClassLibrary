@@ -1,7 +1,0 @@
-E:\OneDrive\dev\c#\ClassLibrary\Portable\bin\Release\ClassLibrary.Portable.dll
-E:\OneDrive\dev\c#\ClassLibrary\Portable\bin\Release\ClassLibrary.Portable.pdb
-E:\OneDrive\dev\c#\ClassLibrary\Portable\bin\Release\Newtonsoft.Json.dll
-E:\OneDrive\dev\c#\ClassLibrary\Portable\bin\Release\Newtonsoft.Json.xml
-E:\OneDrive\dev\c#\ClassLibrary\Portable\obj\Release\Portable.csprojResolveAssemblyReference.cache
-E:\OneDrive\dev\c#\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.dll
-E:\OneDrive\dev\c#\ClassLibrary\Portable\obj\Release\ClassLibrary.Portable.pdb
