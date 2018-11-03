@@ -5,12 +5,7 @@ namespace Shared.Extensions
 {
     public static class ListExtensions
     {
-        #region CONVERSION
-
-        #endregion CONVERSION
-
-
-        #region ADDING
+         #region ADDING
 
         public static void AddRange<T>(this IList<T> list, IEnumerable<T> collection)
         {
