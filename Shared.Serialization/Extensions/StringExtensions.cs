@@ -1,37 +1,13 @@
 using System;
-using System.Collections;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Shared.Extensions;
-using Shared.Serialization.Serializers;
 
 namespace Shared.Serialization.Extensions
 {
     public static class StringExtensions
     {
-        public static string ToString(this IEnumerable collection, string delimiter = ", ",
-            ISerializer serializer = null)
-        {
-            var builder = new StringBuilder();
-            if (serializer == null)
-                serializer = new ToStringSerializer();
-
-            var enumerator = collection.GetEnumerator();
-            if (enumerator.MoveNext())
-                builder.Append(serializer.Serialize(enumerator.Current));
-
-            while (enumerator.MoveNext())
-            {
-                builder.Append(delimiter);
-                builder.Append(serializer.Serialize(enumerator.Current));
-            }
-
-            return builder.ToString();
-        }
-
         #region json async
 
         public static async Task<object> DeserializeJsonAsync(this string value)
