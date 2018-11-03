@@ -1,13 +1,12 @@
 using System.IO;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Shared.Serialization.Extensions;
 
-namespace Shared.Serialization.Serializers
+namespace Shared.Serialization
 {
     public class JsonSerializer : ISerializer, IDeserializer
     {
-        public string FileExtension { get; } = ".json";
+        public string FileExtension { get; } = "json";
 
 
         public T Deserialize<T>(TextReader reader)

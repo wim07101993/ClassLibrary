@@ -3,11 +3,11 @@ using System.IO;
 using System.Threading.Tasks;
 using Shared.Extensions;
 
-namespace Shared.Serialization.Serializers
+namespace Shared.Serialization
 {
     public class ToStringSerializer : ISerializer
     {
-        public string FileExtension { get; } = ".dat";
+        public string FileExtension { get; } = "dat";
 
 
         public void Serialize(object value, TextWriter writer)

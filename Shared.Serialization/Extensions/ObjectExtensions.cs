@@ -85,7 +85,7 @@ namespace Shared.Serialization.Extensions
         {
             using (var writer = new StringWriter())
             {
-                await new XmlSerializer(value.GetType()).SerializeAsync(writer, value);
+                await new System.Xml.Serialization.XmlSerializer(value.GetType()).SerializeAsync(writer, value);
                 return writer.ToString();
             }
         }
@@ -94,7 +94,7 @@ namespace Shared.Serialization.Extensions
         {
             using (var writer = new StringWriter())
             {
-                await new XmlSerializer(value.GetType()).SerializeAsync(writer, value, namespaces);
+                await new System.Xml.Serialization.XmlSerializer(value.GetType()).SerializeAsync(writer, value, namespaces);
                 return writer.ToString();
             }
         }
@@ -107,7 +107,7 @@ namespace Shared.Serialization.Extensions
         {
             using (var writer = new StringWriter())
             {
-                new XmlSerializer(value.GetType()).Serialize(writer, value);
+                new System.Xml.Serialization.XmlSerializer(value.GetType()).Serialize(writer, value);
                 return writer.ToString();
             }
         }
@@ -116,7 +116,7 @@ namespace Shared.Serialization.Extensions
         {
             using (var writer = new StringWriter())
             {
-                new XmlSerializer(value.GetType()).Serialize(writer, value, namespaces);
+                new System.Xml.Serialization.XmlSerializer(value.GetType()).Serialize(writer, value, namespaces);
                 return writer.ToString();
             }
         }

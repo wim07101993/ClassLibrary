@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Text;
-using Shared.Serialization.Serializers;
 
 namespace Shared.Serialization.Extensions
 {

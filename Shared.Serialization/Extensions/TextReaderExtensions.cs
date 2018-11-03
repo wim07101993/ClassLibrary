@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 using Newtonsoft.Json;
 
 namespace Shared.Serialization.Extensions
@@ -9,28 +8,28 @@ namespace Shared.Serialization.Extensions
     public static class TextReaderExtensions
     {
         public static T DeserializeJson<T>(this TextReader reader)
-            => new JsonSerializer().Deserialize<T>(new JsonTextReader(reader));
+            => new Newtonsoft.Json.JsonSerializer().Deserialize<T>(new JsonTextReader(reader));
 
         public static object DeserializeJson(this TextReader reader, Type objectType)
-            => new JsonSerializer().Deserialize(reader, objectType);
+            => new Newtonsoft.Json.JsonSerializer().Deserialize(reader, objectType);
 
         public static async Task<T> DeserializeJsonAsync<T>(this TextReader reader)
-            => await new JsonSerializer().DeserializeAsync<T>(new JsonTextReader(reader));
+            => await new Newtonsoft.Json.JsonSerializer().DeserializeAsync<T>(new JsonTextReader(reader));
 
         public static Task<object> DeserializeJsonAsync(this TextReader reader, Type objectType)
-            => new JsonSerializer().DeserializeAsync(reader, objectType);
+            => new Newtonsoft.Json.JsonSerializer().DeserializeAsync(reader, objectType);
 
 
         public static T DeserializeXml<T>(this TextReader reader)
-            => new XmlSerializer(typeof(T)).Deserialize<T>(reader);
+            => new System.Xml.Serialization.XmlSerializer(typeof(T)).Deserialize<T>(reader);
 
         public static object DeserializeXml(this TextReader reader, Type objectType)
-            => new XmlSerializer(objectType).Deserialize(reader);
+            => new System.Xml.Serialization.XmlSerializer(objectType).Deserialize(reader);
 
         public static async Task<T> DeserializeXmlAsync<T>(this TextReader reader)
-            => await new XmlSerializer(typeof(T)).DeserializeAsync<T>(reader);
+            => await new System.Xml.Serialization.XmlSerializer(typeof(T)).DeserializeAsync<T>(reader);
 
         public static async Task<object> DeserializeXmlAsync(this TextReader reader, Type objectType)
-            => await new XmlSerializer(objectType).DeserializeAsync(reader);
+            => await new System.Xml.Serialization.XmlSerializer(objectType).DeserializeAsync(reader);
     }
 }

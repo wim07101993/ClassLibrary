@@ -2,11 +2,11 @@ using System.IO;
 using System.Threading.Tasks;
 using Shared.Serialization.Extensions;
 
-namespace Shared.Serialization.Serializers
+namespace Shared.Serialization
 {
     public class XmlSerializer : ISerializer, IDeserializer
     {
-        public string FileExtension { get; } = ".xml";
+        public string FileExtension { get; } = "xml";
 
 
         public T Deserialize<T>(TextReader reader)
