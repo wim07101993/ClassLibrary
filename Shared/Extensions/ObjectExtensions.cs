@@ -8,6 +8,19 @@ namespace Shared.Extensions
 {
     public static class ObjectExtensions
     {
+        #region CONVERSION
+        
+        public static double ToDouble(this object value)
+        {
+            var d = value as double? ?? double.NaN;
+            return double.IsInfinity(d)
+                ? double.NaN
+                : d;
+        }
+
+        #endregion CONVERSION
+
+
         #region SERIALIZATION
 
         #region json async
