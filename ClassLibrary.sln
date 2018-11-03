@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Portable", "Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Prism", "Prism\ClassLibrary.Prism.csproj", "{8765C2A6-5C28-4C65-B0AD-49CB21689C49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{99C9E82C-C594-446D-AA59-8FFBC43AD226}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8765C2A6-5C28-4C65-B0AD-49CB21689C49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99C9E82C-C594-446D-AA59-8FFBC43AD226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
