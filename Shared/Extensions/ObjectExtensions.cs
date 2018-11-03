@@ -1,15 +1,10 @@
-using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Newtonsoft.Json;
 
 namespace Shared.Extensions
 {
     public static class ObjectExtensions
     {
-        #region CONVERSION
-        
         public static double ToDouble(this object value)
         {
             var d = value as double? ?? double.NaN;
@@ -18,6 +13,12 @@ namespace Shared.Extensions
                 : d;
         }
 
-        #endregion CONVERSION
+        public static T Clone<T>(this T t)
+        {
+            var stream = new MemoryStream();
+            var serializer = new XmlSerializer(typeof(T));
+            serializer.Serialize(stream, t);
+            return (T) serializer.Deserialize(stream);
+        }
     }
 }
