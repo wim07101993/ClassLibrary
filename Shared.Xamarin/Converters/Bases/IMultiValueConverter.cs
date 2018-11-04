@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-
-namespace ClassLibrary.Xamarin.Converters.Bases
+namespace Shared.Xamarin.Converters.Bases
 {
     public interface IMultiValueConverter
     {

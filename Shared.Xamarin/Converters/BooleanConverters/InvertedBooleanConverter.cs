@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace ClassLibrary.Xamarin.Converters.BooleanConverters
+namespace Shared.Xamarin.Converters.BooleanConverters
 {
     public class InvertedBooleanConverter : IValueConverter
     {

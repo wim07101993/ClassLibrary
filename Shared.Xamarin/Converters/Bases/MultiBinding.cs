@@ -7,8 +7,7 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
-namespace ClassLibrary.Xamarin.Converters.Bases
+namespace Shared.Xamarin.Converters.Bases
 {
     [ContentProperty(nameof(Bindings))]
     public class MultiBinding : IMarkupExtension<Binding>
@@ -16,55 +15,10 @@ namespace ClassLibrary.Xamarin.Converters.Bases
         #region FIELDS
 
         private BindableObject _target;
-
         private readonly InternalValue _internalValue = new InternalValue();
         private readonly IList<BindableProperty> _properties = new List<BindableProperty>();
 
         #endregion FIELDS
-
-
-        #region CONSTRUCTOR
-
-        public Binding ProvideValue(IServiceProvider serviceProvider)
-        {
-            if (string.IsNullOrWhiteSpace(StringFormat) && Converter == null)
-                throw new InvalidOperationException(
-                    $"{nameof(MultiBinding)} requires a {nameof(Converter)} or {nameof(StringFormat)}");
-
-            //Get the object that the markup extension is being applied to
-            var provideValueTarget = (IProvideValueTarget) serviceProvider?.GetService(typeof(IProvideValueTarget));
-            _target = provideValueTarget?.TargetObject as BindableObject;
-
-            if (_target == null)
-                return null;
-
-            foreach (var b in Bindings)
-            {
-                var property = BindableProperty.Create(
-                    $"Property-{Guid.NewGuid():N}", 
-                    typeof(object),
-                    typeof(MultiBinding),
-                    default(object), 
-                    propertyChanged: (_, o, n) => SetValue());
-
-                _properties.Add(property);
-                _target.SetBinding(property, b);
-            }
-
-            SetValue();
-
-            var binding = new Binding
-            {
-                Path = nameof(InternalValue.Value),
-                Converter = new MultiValueConverterWrapper(Converter, StringFormat),
-                ConverterParameter = ConverterParameter,
-                Source = _internalValue
-            };
-
-            return binding;
-        }
-
-        #endregion CONSTRUCTOR
 
 
         #region PROPERTIES
@@ -81,6 +35,38 @@ namespace ClassLibrary.Xamarin.Converters.Bases
 
 
         #region METHODS
+
+        public Binding ProvideValue(IServiceProvider serviceProvider)
+        {
+            if (string.IsNullOrWhiteSpace(StringFormat) && Converter == null)
+                throw new InvalidOperationException(
+                    $"{nameof(MultiBinding)} requires a {nameof(Converter)} or {nameof(StringFormat)}");
+
+            //Get the object that the markup extension is being applied to
+            var provideValueTarget = (IProvideValueTarget) serviceProvider?.GetService(typeof(IProvideValueTarget));
+            _target = provideValueTarget?.TargetObject as BindableObject;
+
+            if (_target == null)
+                return null;
+
+            foreach (var b in Bindings)
+            {
+                var property = BindableProperty.Create($"Property-{Guid.NewGuid():N}", typeof(object),
+                    typeof(MultiBinding), default(object), propertyChanged: (_, o, n) => SetValue());
+                _properties.Add(property);
+                _target.SetBinding(property, b);
+            }
+
+            SetValue();
+
+            return new Binding
+            {
+                Path = nameof(InternalValue.Value),
+                Converter = new MultiValueConverterWrapper(Converter, StringFormat),
+                ConverterParameter = ConverterParameter,
+                Source = _internalValue
+            };
+        }
 
         object IMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
             => ProvideValue(serviceProvider);
@@ -100,14 +86,7 @@ namespace ClassLibrary.Xamarin.Converters.Bases
 
         private sealed class InternalValue : INotifyPropertyChanged
         {
-            #region FIELDS
-
             private object _value;
-
-            #endregion FIELDS
-
-
-            #region PROPERTIES
 
             public object Value
             {
@@ -122,46 +101,22 @@ namespace ClassLibrary.Xamarin.Converters.Bases
                 }
             }
 
-            #endregion PROPERTIES
-
-
-            #region METHODS
-
             private void OnPropertyChanged([CallerMemberName] string propertyName = null)
                 => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-            #endregion METHODS
-
-
-            #region EVENTS
-
             public event PropertyChangedEventHandler PropertyChanged;
-
-            #endregion EVENTS
         }
 
         private sealed class MultiValueConverterWrapper : IValueConverter
         {
-            #region FIELDS
-
             private readonly IMultiValueConverter _multiValueConverter;
             private readonly string _stringFormat;
-
-            #endregion FIELDS
-
-
-            #region CONSTRUCTOR
 
             public MultiValueConverterWrapper(IMultiValueConverter multiValueConverter, string stringFormat)
             {
                 _multiValueConverter = multiValueConverter;
                 _stringFormat = stringFormat;
             }
-
-            #endregion CONSTRUCTOR
-
-
-            #region METHODS
 
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             {
@@ -171,17 +126,16 @@ namespace ClassLibrary.Xamarin.Converters.Bases
                 if (string.IsNullOrWhiteSpace(_stringFormat))
                     return value;
 
-                var array = value as object[];
-
-                value = string.Format(_stringFormat, array ?? value);
+                if (value is object[] array)
+                    value = string.Format(_stringFormat, array);
+                else
+                    value = string.Format(_stringFormat, value);
 
                 return value;
             }
 
-            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) 
                 => throw new NotImplementedException();
-
-            #endregion METHODS
         }
 
         #endregion NESTED CLASSES

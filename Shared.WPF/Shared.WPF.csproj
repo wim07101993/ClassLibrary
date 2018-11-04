@@ -79,6 +79,10 @@
     <Compile Include="Converters\ArcSizeConverter.cs" />
     <Compile Include="Converters\BooleanConverters\InvertBooleanConverter.cs" />
     <Compile Include="Converters\BooleanConverters\InvertedBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\MultiBooleanAndConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\MultiBooleanAndToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\MultiBooleanOrConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\MultiBooleanOrToVisibilityConverter.cs" />
     <Compile Include="Converters\LargeArcConverter.cs" />
     <Compile Include="Converters\MessageBoxImageToVisualConverter.cs" />
     <Compile Include="Converters\NoZeroConverter.cs" />
