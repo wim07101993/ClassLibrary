@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Behaviors\HideCloseButtonBehavior.cs" />
     <Compile Include="Controls\EButtonsAlignment.cs" />
+    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\NumericTextBox.cs" />
     <Compile Include="Controls\NumericTextBoxChangedRoutedEventArgs.cs" />
     <Compile Include="Controls\NumericTextBoxChangedRoutedEventHandler.cs" />
@@ -93,11 +94,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Themes\Buttons.xaml">
+    <Page Include="Themes\Buttons\ChromelessButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\NumericTextBox.xaml">
+    <Page Include="Themes\Buttons\IconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Text\NumericTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -105,7 +110,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Styles.xaml">
+    <Page Include="Themes\Themes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
