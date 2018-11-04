@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Xamarin", "Xam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Windows", "Windows\ClassLibrary.Windows.csproj", "{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Serialization", "Shared.Serialization\Shared.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Serialization", "Shared.Serialization\Shared.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Prism", "Shared.Prism\Shared.Prism.csproj", "{FD344915-A765-4472-B633-0E5A397705DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Prism", "Shared.Prism\Shared.Prism.csproj", "{FD344915-A765-4472-B633-0E5A397705DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WPF", "Shared.WPF\Shared.WPF.csproj", "{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{FD344915-A765-4472-B633-0E5A397705DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD344915-A765-4472-B633-0E5A397705DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD344915-A765-4472-B633-0E5A397705DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E63824EE-3EE1-4800-BD53-B0CF33D2D145}
 	EndGlobalSection
 EndGlobal
