@@ -77,8 +77,8 @@
     <Compile Include="Controls\NumericTextBoxChangedRoutedEventHandler.cs" />
     <Compile Include="Converters\ArcEndPointConverter.cs" />
     <Compile Include="Converters\ArcSizeConverter.cs" />
-    <Compile Include="Converters\InvertBooleanConverter.cs" />
-    <Compile Include="Converters\InvertedBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\InvertBooleanConverter.cs" />
+    <Compile Include="Converters\BooleanConverters\InvertedBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\LargeArcConverter.cs" />
     <Compile Include="Converters\MessageBoxImageToVisualConverter.cs" />
     <Compile Include="Converters\NoZeroConverter.cs" />

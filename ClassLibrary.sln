@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Xamarin", "Xamarin\ClassLibrary.Xamarin.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.Windows", "Windows\ClassLibrary.Windows.csproj", "{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Serialization", "Shared.Serialization\Shared.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
@@ -25,10 +23,6 @@ Global
 		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7A7EDAA-3A7E-4151-A8EB-F7B7FBB29AE1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU

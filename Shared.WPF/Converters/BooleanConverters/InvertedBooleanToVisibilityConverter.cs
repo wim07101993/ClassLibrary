@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace Shared.WPF.Converters
+namespace Shared.WPF.Converters.BooleanConverters
 {
     public class InvertedBooleanToVisibilityConverter : IValueConverter
     {
