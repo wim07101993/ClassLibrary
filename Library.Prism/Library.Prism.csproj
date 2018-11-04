@@ -2,6 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>Library.Prism</AssemblyName>
+        <RootNamespace>Library.Prism</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -9,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Shared.Serialization\Shared.Serialization.csproj" />
+      <ProjectReference Include="..\Library.Serialization\Library.Serialization.csproj" />
     </ItemGroup>
 
 </Project>

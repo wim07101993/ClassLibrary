@@ -2,14 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>Library</AssemblyName>
+        <RootNamespace>Library</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.1-beta1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 
 </Project>

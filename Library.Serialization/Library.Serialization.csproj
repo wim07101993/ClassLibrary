@@ -2,10 +2,16 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>Library.Serialization</AssemblyName>
+        <RootNamespace>Library.Serialization</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.1-beta1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Library\Library.csproj" />
     </ItemGroup>
 
 </Project>

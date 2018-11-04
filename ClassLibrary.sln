@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Serialization", "Shared.Serialization\Shared.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Serialization", "Library.Serialization\Library.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Prism", "Shared.Prism\Shared.Prism.csproj", "{FD344915-A765-4472-B633-0E5A397705DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Prism", "Library.Prism\Library.Prism.csproj", "{FD344915-A765-4472-B633-0E5A397705DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.WPF", "Shared.WPF\Shared.WPF.csproj", "{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.WPF", "Library.WPF\Library.WPF.csproj", "{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Xamarin", "Shared.Xamarin\Shared.Xamarin.csproj", "{78E859EA-A961-408F-B414-A18B563915C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Xamarin", "Library.Xamarin\Library.Xamarin.csproj", "{78E859EA-A961-408F-B414-A18B563915C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
