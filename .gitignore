@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 Shared.Serialization/obj/
 Shared/obj/
+Shared.Prism/obj/
