@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:Shared.WPF.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Themes/Buttons.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Themes/Buttons/ChromelessButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <converters:ThicknessToDoubleConverter x:Key="ThicknessToDoubleConverter" />
