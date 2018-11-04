@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Shared.Xamarin.Converters.Bases;
+using Library.Xamarin.Converters.Bases;
 
-namespace Shared.Xamarin.Converters.BooleanConverters
+namespace Library.Xamarin.Converters.BooleanConverters
 {
     public class MultiBooleanAndConverter : IMultiValueConverter
     {

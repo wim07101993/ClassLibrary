@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Shared.Extensions;
+using Library.Extensions;
 
-namespace Shared.Serialization.Extensions
+namespace Library.Serialization.Extensions
 {
     public static class StringExtensions
     {

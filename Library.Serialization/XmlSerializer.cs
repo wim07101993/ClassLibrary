@@ -1,8 +1,8 @@
 using System.IO;
 using System.Threading.Tasks;
-using Shared.Serialization.Extensions;
+using Library.Serialization.Extensions;
 
-namespace Shared.Serialization
+namespace Library.Serialization
 {
     public class XmlSerializer : ISerializer, IDeserializer
     {

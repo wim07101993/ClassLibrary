@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Shared.Xamarin.Converters.Bases
+namespace Library.Xamarin.Converters.Bases
 {
     [ContentProperty(nameof(Bindings))]
     public class MultiBinding : IMarkupExtension<Binding>

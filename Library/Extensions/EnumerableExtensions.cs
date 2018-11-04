@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class EnumerableExtensions
     {

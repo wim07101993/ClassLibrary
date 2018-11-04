@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Shared.Collections;
-using Shared.Extensions;
+using Library.Collections;
+using Library.Extensions;
 
-namespace Shared.Randomizing
+namespace Library.Randomizing
 {
     public class Randomizer : IRandomizer
     {

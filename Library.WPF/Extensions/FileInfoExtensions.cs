@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Media.Imaging;
 using Microsoft.WindowsAPICodePack.Shell;
 
-namespace Shared.WPF.Extensions
+namespace Library.WPF.Extensions
 {
     public static class FileInfoExtensions
     {

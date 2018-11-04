@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace Shared.WPF.Converters.ObjectConverters
+namespace Library.WPF.Converters.ObjectConverters
 {
     public class ObjectToVisibilityConverter : IValueConverter
     {

@@ -1,7 +1,7 @@
 using System.IO;
 using System.Xml.Serialization;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class ObjectExtensions
     {

@@ -1,4 +1,4 @@
-﻿namespace Shared.WPF.Extensions
+﻿namespace Library.WPF.Extensions
 {
     public enum EThumbnailSize
     {

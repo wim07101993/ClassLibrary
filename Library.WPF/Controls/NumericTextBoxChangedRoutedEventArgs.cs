@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Shared.WPF.Controls
+namespace Library.WPF.Controls
 {
     public class NumericTextBoxChangedRoutedEventArgs : RoutedEventArgs
     {

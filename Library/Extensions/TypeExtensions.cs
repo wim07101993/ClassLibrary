@@ -1,6 +1,6 @@
 using System;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class TypeExtensions
     {

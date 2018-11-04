@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Shared.Serialization.Extensions
+namespace Library.Serialization.Extensions
 {
     public static class TextReaderExtensions
     {

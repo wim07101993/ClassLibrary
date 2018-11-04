@@ -9,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace Shared.WPF.Controls
+namespace Library.WPF.Controls
 {
     public class NumericTextBox : Control
     {

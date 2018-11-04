@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Text;
 
-namespace Shared.Serialization.Extensions
+namespace Library.Serialization.Extensions
 {
     public static class EnumerableExtensions
     {

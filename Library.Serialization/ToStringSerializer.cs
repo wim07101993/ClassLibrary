@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Shared.Extensions;
+using Library.Extensions;
 
-namespace Shared.Serialization
+namespace Library.Serialization
 {
     public class ToStringSerializer : ISerializer
     {

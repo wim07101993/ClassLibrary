@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using Shared.Serialization.Extensions;
+using Library.Serialization.Extensions;
 
-namespace Shared.Serialization.Csv
+namespace Library.Serialization.Csv
 {
     public class HeaderElement
     {

@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class MemberInfoExtensions
     {

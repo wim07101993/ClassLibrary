@@ -1,7 +1,7 @@
 using System;
-using Shared.Collections;
+using Library.Collections;
 
-namespace Shared.Randomizing
+namespace Library.Randomizing
 {
     public interface IRandomizer
     {

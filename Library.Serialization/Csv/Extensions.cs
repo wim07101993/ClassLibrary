@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Shared.Extensions;
+using Library.Extensions;
 
-namespace Shared.Serialization.Csv
+namespace Library.Serialization.Csv
 {
     internal static class Extensions
     {

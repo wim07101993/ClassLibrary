@@ -3,9 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
-using Shared.Extensions;
+using Library.Extensions;
 
-namespace Shared.Serialization.Extensions
+namespace Library.Serialization.Extensions
 {
     public static class ObjectExtensions
     {

@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class FileInfoExtensions
     {

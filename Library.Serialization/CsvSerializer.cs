@@ -6,11 +6,11 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Shared.Extensions;
-using Shared.Serialization.Csv;
-using Shared.Serialization.Extensions;
+using Library.Extensions;
+using Library.Serialization.Csv;
+using Library.Serialization.Extensions;
 
-namespace Shared.Serialization
+namespace Library.Serialization
 {
     public class CsvSerializer : ISerializer, IDeserializer
     {

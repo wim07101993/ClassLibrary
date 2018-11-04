@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Shared
+namespace Library
 {
     public static class Enumerable
     {

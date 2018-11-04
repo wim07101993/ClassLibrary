@@ -2,9 +2,9 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
-using Shared.Extensions;
+using Library.Extensions;
 
-namespace Shared.WPF.Converters
+namespace Library.WPF.Converters
 {
     public class LargeArcConverter : IMultiValueConverter
     {

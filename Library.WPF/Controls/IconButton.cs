@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Shared.WPF.Controls
+namespace Library.WPF.Controls
 {
     public class IconButton : Button
     {

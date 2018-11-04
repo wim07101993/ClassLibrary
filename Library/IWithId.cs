@@ -1,4 +1,4 @@
-namespace Shared
+namespace Library
 {
     public interface IWithId<TId>
     {

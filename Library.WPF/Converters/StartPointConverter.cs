@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace Shared.WPF.Converters
+namespace Library.WPF.Converters
 {
     public class StartPointConverter : IValueConverter
     {

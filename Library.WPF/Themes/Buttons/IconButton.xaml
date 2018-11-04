@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:Shared.WPF.Controls">
+                    xmlns:controls="clr-namespace:Library.WPF.Controls">
     <Style TargetType="{x:Type controls:IconButton}">
         <Setter Property="Template">
             <Setter.Value>

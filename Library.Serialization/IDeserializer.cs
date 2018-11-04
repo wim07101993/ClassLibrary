@@ -1,7 +1,7 @@
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Shared.Serialization
+namespace Library.Serialization
 {
     public interface IDeserializer
     {

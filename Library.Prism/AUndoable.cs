@@ -7,10 +7,10 @@ using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Prism.Mvvm;
-using Shared.Extensions;
-using Shared.Serialization.Csv;
+using Library.Extensions;
+using Library.Serialization.Csv;
 
-namespace Shared.Prism
+namespace Library.Prism
 {
     public abstract class AUndoable : BindableBase
     {

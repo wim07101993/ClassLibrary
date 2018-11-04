@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Interactivity;
 using System.Windows.Interop;
 
-namespace Shared.WPF.Behaviors
+namespace Library.WPF.Behaviors
 {
     public class HideCloseButtonBehavior : Behavior<Window>
     {

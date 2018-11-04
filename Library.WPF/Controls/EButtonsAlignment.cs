@@ -1,4 +1,4 @@
-﻿namespace Shared.WPF.Controls
+﻿namespace Library.WPF.Controls
 {
     public enum EButtonsAlignment
     {

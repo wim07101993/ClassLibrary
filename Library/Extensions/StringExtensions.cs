@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 
-namespace Shared.Extensions
+namespace Library.Extensions
 {
     public static class StringExtensions
     {
