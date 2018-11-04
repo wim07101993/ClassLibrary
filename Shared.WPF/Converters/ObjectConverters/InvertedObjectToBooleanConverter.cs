@@ -2,35 +2,32 @@
 using System.Globalization;
 using System.Windows.Data;
 
-
-namespace ClassLibrary.Windows.Converters
+namespace Shared.WPF.Converters.ObjectConverters
 {
-    /// <summary>
-    /// A converter to convert strings to lower case.
-    /// </summary>
-    public class StringToLowerCaseConverter : IValueConverter
+    public class InvertedObjectToBooleanConverter : IValueConverter
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Transforms a string to lower case.
-        /// If the value is not a string, null is returned.
+        /// Returns true when a value is null.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) 
-            => (value as string)?.ToLower();
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            => value == null;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Not implemented => throws <see cref="NotImplementedException"/>.
+        /// Not implemented.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="targetType"></param>
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
         /// <returns></returns>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) 
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             => throw new NotImplementedException();
     }
 }
