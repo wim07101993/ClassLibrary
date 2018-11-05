@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Library
+namespace Library.Core
 {
     public static class Enumerable
     {

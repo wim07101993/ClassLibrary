@@ -1,14 +1,8 @@
 using System;
-using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
-using Formatting = Newtonsoft.Json.Formatting;
 
-namespace Library.Extensions
+namespace Library.Core.Extensions
 {
     public static class StringExtensions
     {

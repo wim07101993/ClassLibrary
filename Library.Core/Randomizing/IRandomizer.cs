@@ -1,7 +1,7 @@
 using System;
-using Library.Collections;
+using Library.Core.Collections;
 
-namespace Library.Randomizing
+namespace Library.Core.Randomizing
 {
     public interface IRandomizer
     {

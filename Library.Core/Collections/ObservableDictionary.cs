@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Library.Extensions;
+using Library.Core.Extensions;
 
-namespace Library.Collections
+namespace Library.Core.Collections
 {
     public class ObservableDictionary<TKey, TValue> :
         System.Collections.ObjectModel.ObservableCollection<KeyValuePair<TKey, TValue>>,

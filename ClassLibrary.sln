@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Core", "Library.Core\Library.Core.csproj", "{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Serialization", "Library.Serialization\Library.Serialization.csproj", "{87E93CD8-A4E9-41D4-9422-9712F5A0F6CB}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.WPF", "Library.WPF\Library.WPF.csproj", "{88DB8262-A9EB-4A0A-8FB1-9891D41739E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Xamarin", "Library.Xamarin\Library.Xamarin.csproj", "{78E859EA-A961-408F-B414-A18B563915C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo's", "Demo's", "{C402BF78-A102-4B83-90FF-F6537E71240A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreConsole", "DotNetCoreConsole\DotNetCoreConsole.csproj", "{00EDF23A-B960-485F-A82A-536137298FE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{78E859EA-A961-408F-B414-A18B563915C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E859EA-A961-408F-B414-A18B563915C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E859EA-A961-408F-B414-A18B563915C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00EDF23A-B960-485F-A82A-536137298FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00EDF23A-B960-485F-A82A-536137298FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00EDF23A-B960-485F-A82A-536137298FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00EDF23A-B960-485F-A82A-536137298FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00EDF23A-B960-485F-A82A-536137298FE4} = {C402BF78-A102-4B83-90FF-F6537E71240A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E63824EE-3EE1-4800-BD53-B0CF33D2D145}

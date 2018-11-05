@@ -1,4 +1,4 @@
-namespace Library
+namespace Library.Core
 {
     public interface IWithId<TId>
     {

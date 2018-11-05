@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Library.Extensions;
+using Library.Core.Extensions;
 
-namespace Library.Collections
+namespace Library.Core.Collections
 {
     // Hopefully the operator wrappers can be added to extensions instead with C#8
     public sealed class Collection<T> : System.Collections.ObjectModel.Collection<T>

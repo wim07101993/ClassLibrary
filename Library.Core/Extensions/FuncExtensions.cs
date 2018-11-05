@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Library.Extensions
+namespace Library.Core.Extensions
 {
     public static class FuncExtensions
     {

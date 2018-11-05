@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
-using Library.Extensions;
+using Library.Core.Extensions;
 
-namespace Library.Collections
+namespace Library.Core.Collections
 {
     public sealed class ObservableCollection<T> : System.Collections.ObjectModel.ObservableCollection<T>
     {

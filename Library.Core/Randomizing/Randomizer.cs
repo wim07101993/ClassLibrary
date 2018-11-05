@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Library.Collections;
-using Library.Extensions;
+using Library.Core.Collections;
+using Library.Core.Extensions;
 
-namespace Library.Randomizing
+namespace Library.Core.Randomizing
 {
     public class Randomizer : IRandomizer
     {

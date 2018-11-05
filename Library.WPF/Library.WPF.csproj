@@ -141,7 +141,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library\Library.csproj">
+    <ProjectReference Include="..\Library.Core\Library.Core.csproj">
       <Project>{7A4E3A91-F1AD-410B-9DC9-E079E6FF4AA9}</Project>
       <Name>Library</Name>
     </ProjectReference>
