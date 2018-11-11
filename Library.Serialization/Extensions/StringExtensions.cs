@@ -1,8 +1,8 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Library.Core.Extensions;
 using Newtonsoft.Json;
-using Library.Extensions;
 
 namespace Library.Serialization.Extensions
 {
@@ -95,6 +95,12 @@ namespace Library.Serialization.Extensions
                 return await reader.DeserializeXmlAsync<T>();
         }
 
+        public static async Task<object> DeserializeXmlAsync(this string s, Type type)
+        {
+            using (var reader = new StringReader(s))
+                return await reader.DeserializeXmlAsync(type);
+        }
+
         #endregion xml async
 
 
@@ -104,6 +110,12 @@ namespace Library.Serialization.Extensions
         {
             using (var reader = new StringReader(s))
                 return reader.DeserializeXml<T>();
+        }
+
+        public static object DeserializeXml(this string s, Type type)
+        {
+            using (var reader = new StringReader(s))
+                return reader.DeserializeXml(type);
         }
 
         #endregion xml

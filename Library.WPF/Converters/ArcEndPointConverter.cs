@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
-using Library.Extensions;
+using Library.Core.Extensions;
 
 namespace Library.WPF.Converters
 {

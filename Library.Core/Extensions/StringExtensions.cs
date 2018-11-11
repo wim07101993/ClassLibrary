@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Library.Core.Extensions
@@ -27,7 +28,7 @@ namespace Library.Core.Extensions
 
         #endregion PARSING
 
-        
+
         #region CONVERTSION
 
         public static byte[] ToAscii(this string s) => Encoding.ASCII.GetBytes(s);
@@ -35,7 +36,7 @@ namespace Library.Core.Extensions
         public static byte[] ToUtf32(this string s) => Encoding.UTF32.GetBytes(s);
 
         public static StringReader ToReader(this string s) => new StringReader(s);
-        
+
         #endregion CONVERTSION
 
 
@@ -45,5 +46,21 @@ namespace Library.Core.Extensions
             => string.Equals(s, valueToCompare, StringComparison.InvariantCultureIgnoreCase);
 
         #endregion EQUALITY
+
+        public static string[] SplitOnFirst(this string s, params char[] chars)
+        {
+            var index = s.IndexOfFirst(x => chars.Any(y => y == x));
+            return index >= 1
+                ? new[] {s.Substring(0, index), s.Substring(index, s.Length - 1)}
+                : new[] {s};
+        }
+
+        public static int IndexOfFirst(this string s, Func<char, bool> predicate)
+        {
+            for (var i = 0; i < s.Length; i++)
+                if (predicate(s[i]))
+                    return i;
+            return -1;
+        }
     }
 }

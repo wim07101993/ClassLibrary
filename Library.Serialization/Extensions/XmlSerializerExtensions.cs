@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
-using Library.Extensions;
+using Library.Core.Extensions;
 
 namespace Library.Serialization.Extensions
 {

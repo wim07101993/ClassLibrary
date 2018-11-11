@@ -5,9 +5,9 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
+using Library.Core.Extensions;
 using Newtonsoft.Json;
 using Prism.Mvvm;
-using Library.Extensions;
 using Library.Serialization.Csv;
 
 namespace Library.Prism

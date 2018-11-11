@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Library.Extensions;
+using Library.Core.Extensions;
 
 namespace Library.Serialization
 {
