@@ -21,7 +21,7 @@ namespace DotNetCoreConsole.Parsing
             _navigationService = navigationService;
         }
 
-        
+
         public object BaseObject
         {
             get => _navigationService.History.First();
@@ -81,7 +81,13 @@ namespace DotNetCoreConsole.Parsing
 
         private Object InterpretInternal(string input)
         {
-           
+            var indexedInput = new IndexedString(input);
+            foreach (var part in indexedInput.Parts)
+            {
+                
+            }
+
+            return null;
         }
 
         private bool CheckProgramFunctions(string input, out string response)
