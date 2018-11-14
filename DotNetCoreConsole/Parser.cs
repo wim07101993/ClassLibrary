@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using DotNetCoreConsole.Reflected;
 using Library.Serialization;
 using Object = DotNetCoreConsole.Reflected.Object;
@@ -107,6 +109,10 @@ namespace DotNetCoreConsole
                 case "\\-h":
                     response = GenerateHelp();
                     return true;
+                case "\\ls":
+                case "\\dir":
+                    response = GenerateMemberList();
+                    return true;
                 default:
                     response = null;
                     return false;
@@ -117,6 +123,53 @@ namespace DotNetCoreConsole
         {
             // TODO
             throw new NotImplementedException();
+        }
+
+        private string GenerateMemberList(bool includePrivate = false)
+        {
+            var current = _navigationService.CurrentObject;
+            var builder = new StringBuilder();
+
+            builder.AppendLine("PROPERTIES:");
+            builder.AppendLine(GenerateAMemberWithValues(current.Properties.Values));
+
+            builder.AppendLine("FIELDS:");
+            builder.AppendLine(GenerateAMemberWithValues(current.Fields.Values));
+
+            builder.AppendLine("VARIABLES:");
+            builder.AppendLine(GenerateAMemberWithValues(current.LocalVariables.Values));
+
+            builder.AppendLine("METHODS:");
+            foreach (var method in _navigationService.CurrentObject.Methods.Values)
+            {
+                if (_navigationService.CurrentObject.Properties.Keys.Any(x => $"get_{x}" == method.Name || $"set_{x}" == method.Name))
+                    continue;
+
+                var param = method.Parameters.Values.Aggregate(new StringBuilder(), (x, y) => x.Append($"{y.Name}: {y.Type.Name}, "));
+                builder.AppendLine($"{method.Name}\t\t{param}");
+            }
+            builder.AppendLine();
+
+            return builder.ToString();
+        }
+
+        private string GenerateAMemberWithValues(IEnumerable<AMemberWithValue> members, bool includePrivate = false)
+        {
+            var builder = new StringBuilder();
+
+            foreach (var member in members)
+            {
+                builder.Append(member.Name);
+                builder.Append('\t');
+
+                var tabLength = 2 - member.Name.Length / 8;
+                for (var i = tabLength - 1; i >= 0; i--)
+                    builder.Append('\t');
+
+                builder.AppendLine(member.Type.Name);
+            }
+          
+            return builder.ToString();
         }
 
         private string NavigateUp(string input)

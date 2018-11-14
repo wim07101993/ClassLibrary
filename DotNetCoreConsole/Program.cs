@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DotNetCoreConsole.Reflected;
+using Library.Serialization;
 
 namespace DotNetCoreConsole
 {
@@ -10,6 +13,15 @@ namespace DotNetCoreConsole
         private static void Main()
         {
             GeneratePeople();
+            var jsonSerializer = new JsonSerializer();
+            var navigation = new NavigationService();
+            var parser = new Parser(jsonSerializer, jsonSerializer, navigation) {BaseObject = People.FirstOrDefault()};
+            
+            while (true)
+            {
+                var line = Console.ReadLine()?.Trim();
+                Console.WriteLine(parser.Interpret(line));
+            }
         }
 
         private static void GeneratePeople()
