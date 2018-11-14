@@ -6,10 +6,17 @@ namespace DotNetCoreConsole.Reflected
 {
     public class Object
     {
-        public Object(object instance, Type type)
+        public Object(object instance)
         {
             Instance = instance;
         }
+
+
+        public AMember this[string name]
+            => Properties.FirstOrDefault(x => x.Key == name).Value ??
+               Fields.FirstOrDefault(x => x.Key == name).Value ??
+               Methods.FirstOrDefault(x => x.Key == name).Value ??
+               LocalVariables.FirstOrDefault(x => x.Key == name).Value as AMember;
 
         public object Instance { get; }
 
@@ -30,6 +37,6 @@ namespace DotNetCoreConsole.Reflected
                 .GetFields()
                 .ToDictionary(x => x.Name, x => new Field(x, Instance));
 
-        public Dictionary<string, Object> LocalVariables { get; } = new Dictionary<string, Object>();
+        public Dictionary<string, Variable> LocalVariables { get; } = new Dictionary<string, Variable>();
     }
 }

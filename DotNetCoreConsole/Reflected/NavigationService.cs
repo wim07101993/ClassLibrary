@@ -22,35 +22,23 @@ namespace DotNetCoreConsole.Reflected
         }
 
 
-        public Object EnterProperty(string propertyName)
+        public Object EnterMemberWithValue(AMemberWithValue member)
         {
-            _history += CurrentObject.Properties[propertyName].GetValue();
+            _history += member.GetValue();
             return CurrentObject;
         }
-
-        public Object EnterField(string fieldName)
+        
+        public void InvokeMethod(Method method, object[] parameters, string resultName = null)
         {
-            _history += CurrentObject.Fields[fieldName].GetValue();
-            return CurrentObject;
-        }
-
-        public Object EnterLocalVariable(string variableName)
-        {
-            _history += CurrentObject.LocalVariables[variableName];
-            return CurrentObject;
-        }
-
-        public void InvokeMethod(string methodName, object[] parameters, string resultName = null)
-        {
-            var result = CurrentObject.Methods[methodName].Invoke(parameters);
+            var result = method.Invoke(parameters);
 
             if (result.NoResult || string.IsNullOrWhiteSpace(resultName))
                 return;
 
             if (CurrentObject.LocalVariables.ContainsKey(resultName))
-                CurrentObject.LocalVariables[resultName] = result.Value;
+                CurrentObject.LocalVariables[resultName].SetValue(result.Value);
             else
-                CurrentObject.LocalVariables.Add(resultName, result.Value);
+                CurrentObject.LocalVariables.Add(resultName, new Variable(resultName, result.Value, CurrentObject));
         }
 
         public Object ExitMember(int numberOfLevels = 1)

@@ -15,6 +15,6 @@ namespace DotNetCoreConsole.Reflected
 
         public MemberInfo Info { get; }
 
-        public string Name => Info.Name;
+        public virtual string Name => Info.Name;
     }
 }

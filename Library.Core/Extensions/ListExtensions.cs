@@ -65,6 +65,12 @@ namespace Library.Core.Extensions
             return -1;
         }
 
+        public static IEnumerable<T> Slice<T>(this IList<T> list, int startIndex, int endIndex)
+        {
+            for (var i = startIndex; i < endIndex; i++)
+                yield return list[i];
+        }
+
         #endregion FINDING
 
 

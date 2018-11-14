@@ -16,7 +16,7 @@ namespace DotNetCoreConsole.Reflected
         public override Type Type => PropertyInfo.PropertyType;
 
 
-        public override Object GetValue() => new Object(PropertyInfo.GetValue(Parent), Type);
+        public override Object GetValue() => new Object(PropertyInfo.GetValue(Parent));
         public override void SetValue(object value) => PropertyInfo.SetValue(Parent, value);
     }
 }

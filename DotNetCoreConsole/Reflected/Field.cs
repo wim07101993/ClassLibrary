@@ -16,7 +16,7 @@ namespace DotNetCoreConsole.Reflected
         public override Type Type => FieldInfo.FieldType;
 
 
-        public override Object GetValue() => new Object(FieldInfo.GetValue(Parent), Type);
+        public override Object GetValue() => new Object(FieldInfo.GetValue(Parent));
         public override void SetValue(object value) => FieldInfo.SetValue(Parent, value);
     }
 }

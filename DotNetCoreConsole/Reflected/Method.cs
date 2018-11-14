@@ -25,7 +25,7 @@ namespace DotNetCoreConsole.Reflected
             var result = MethodInfo.Invoke(Parent, parameters);
             return result == null
                 ? new MethodResult {NoResult = true}
-                : new MethodResult {Value = new Object(result, MethodInfo.ReturnType)};
+                : new MethodResult {Value = new Object(result)};
         }
     }
 }

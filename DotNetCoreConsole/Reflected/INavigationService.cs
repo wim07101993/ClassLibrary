@@ -8,11 +8,8 @@ namespace DotNetCoreConsole.Reflected
         Object CurrentObject { get; set; }
 
 
-        Object EnterProperty(string propertyName);
-        Object EnterField(string fieldName);
-        Object EnterLocalVariable(string variableName);
-
-        void InvokeMethod(string methodName, object[] parameters, string resultName = null);
+        Object EnterMemberWithValue(AMemberWithValue member);
+        void InvokeMethod(Method method, object[] parameters, string resultName = null);
 
         Object ExitMember(int numberOfLevels = 1);
     }
