@@ -10,7 +10,6 @@ namespace Library.Serialization
     public class CsvSerializer : ISerializer, IDeserializer
     {
         public string FileExtension { get; } = "csv";
-
         public char Delimiter { get; set; } = ',';
 
         public bool WithHeader { get; set; } = true;
@@ -56,6 +55,26 @@ namespace Library.Serialization
         {
             var reader = new StringReader(serializedValue);
             return Deserialize<T>(reader);
+        }
+
+        public object Deserialize(TextReader reader, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object Deserialize(string serializedValue, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> DeserializeAsync(TextReader reader, Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> DeserializeAsync(string serializedValue, Type type)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<T> DeserializeAsync<T>(TextReader reader)

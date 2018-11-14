@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Library.Core;
 using Library.Serialization.Extensions;
 
 namespace Library.Serialization.Csv
