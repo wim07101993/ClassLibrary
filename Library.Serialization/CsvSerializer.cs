@@ -77,7 +77,7 @@ namespace Library.Serialization
             throw new NotImplementedException();
         }
 
-        public async Task<T> DeserializeAsync<T>(TextReader reader)
+        public Task<T> DeserializeAsync<T>(TextReader reader)
         {
             throw new System.NotImplementedException();
         }

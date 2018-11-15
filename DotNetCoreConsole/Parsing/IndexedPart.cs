@@ -2,8 +2,15 @@
 {
     public class IndexedPart
     {
-        public IndexType Type { get; set; }
-        public int StartIndex { get; set; } = -1;
-        public int EndIndex { get; set; } = -1;
+        public IndexedPart(IndexType type, int startIndex = -1, int endIndex = -1)
+        {
+            Type = type;
+            StartIndex = startIndex;
+            EndIndex = endIndex;
+        }
+
+        public IndexType Type { get; }
+        public int StartIndex { get; }
+        public int EndIndex { get; }
     }
 }

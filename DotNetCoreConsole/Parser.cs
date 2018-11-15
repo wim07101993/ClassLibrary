@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DotNetCoreConsole.Parsing;
 using DotNetCoreConsole.Reflected;
 using Library.Serialization;
 using Object = DotNetCoreConsole.Reflected.Object;
@@ -75,6 +76,8 @@ namespace DotNetCoreConsole
                 return response;
 
             input = NavigateUp(input);
+
+            var indexedString = new IndexedString(input);
 
             var output = InterpretInternal(input);
             return _serializer.Serialize(output.Instance);

@@ -51,19 +51,16 @@ namespace DotNetCoreConsole.Parsing
             if (!IsAtIndex(input, index))
                 return null;
 
-            var part = new IndexedPart {Type = this, StartIndex = index};
+            var startIndex = index;
 
             if (string.IsNullOrEmpty(Closer))
-                return part;
+                return new IndexedPart(this, startIndex);
 
             for (; index < input.Length; index++)
                 if (input.ContainsStringAtIndex(index, Closer))
-                {
-                    part.EndIndex = index;
-                    return part;
-                }
+                    return new IndexedPart(this, startIndex, index);
 
-            throw new NoClosingStringException(Closer, input, part.StartIndex);
+            throw new NoClosingStringException(Closer, input, startIndex);
         }
 
         

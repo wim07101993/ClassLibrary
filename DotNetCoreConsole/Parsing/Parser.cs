@@ -25,7 +25,7 @@ namespace DotNetCoreConsole.Parsing
         public object BaseObject
         {
             get => _navigationService.History.First();
-            set => _navigationService.CurrentObject = new Object(value, value.GetType());
+            set => _navigationService.CurrentObject = new Object(value);
         }
 
 
@@ -127,63 +127,6 @@ namespace DotNetCoreConsole.Parsing
             }
 
             return input;
-        }
-
-        private Object Set(string input)
-        {
-            var split = input
-                .SplitOnFirst('=')
-                .Select(x => x.Trim())
-                .ToArray();
-
-            var name = split[0];
-
-            var value = Interpret(split[1]);
-            var property = _navigationService
-                .CurrentObject
-                .Properties
-                .FirstOrDefault(x => x.Key == name)
-                .Value;
-
-            if (property != null)
-                property.SetValue(value.Instance);
-            else
-            {
-                var field = _navigationService
-                    .CurrentObject
-                    .Fields
-                    .FirstOrDefault(x => x.Key == name)
-                    .Value;
-
-                if (field != null)
-                    field.SetValue(value.Instance);
-                else
-                    throw new NotFoundException(
-                        $"There is no property or field corresponding with the name {input}");
-            }
-
-            return new Object($"Set the value of {name} to {_serializer.Serialize(value.Instance)}",
-                typeof(string));
-        }
-
-        private Object Invoke(string input)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Object Index(string input)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Object NavigateDown(string input)
-        {
-            if (_navigationService.CurrentObject.Properties.ContainsKey(input))
-                return _navigationService.EnterProperty(input);
-            if (_navigationService.CurrentObject.Fields.ContainsKey(input))
-                return _navigationService.EnterField(input);
-
-            throw new NotFoundException($"There is no property or field corresponding with the name {input}");
         }
     }
 }
