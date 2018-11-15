@@ -62,5 +62,16 @@ namespace Library.Core.Extensions
                     return i;
             return -1;
         }
+
+        public static bool ContainsStringAtIndex(this string s, int index, string toCheck)
+        {
+            if (string.IsNullOrEmpty(toCheck))
+                return false;
+
+            if (s.Length < index + toCheck.Length)
+                return false;
+
+            return toCheck == s.Substring(index, toCheck.Length);
+        }
     }
 }
